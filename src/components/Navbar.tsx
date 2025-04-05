@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
@@ -38,8 +37,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="flex items-center">
           <span className="text-flutter-primary font-bold text-2xl">
-            FlutterFlow
-            <span className="text-flutter-dark">Gems</span>
+            FF<span className="text-flutter-dark">Web</span>
           </span>
         </div>
         

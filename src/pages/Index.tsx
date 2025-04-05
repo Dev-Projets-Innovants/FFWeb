@@ -14,7 +14,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 const Index = () => {
   useEffect(() => {
     // Set the document title
-    document.title = 'FlutterFlowGems - Premium FlutterFlow Websites';
+    document.title = 'FFWeb - Premium FlutterFlow Websites';
   }, []);
 
   return (

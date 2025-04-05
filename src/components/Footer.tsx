@@ -9,8 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <span className="text-flutter-primary font-bold text-2xl">
-              FlutterFlow
-              <span className="text-white">Gems</span>
+              FF<span className="text-white">Web</span>
             </span>
             <p className="mt-2 text-white/70 max-w-md">
               Premium web experiences built with FlutterFlow.
@@ -31,7 +30,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-white/50 text-sm">
-              © {new Date().getFullYear()} FlutterFlowGems. All rights reserved.
+              © {new Date().getFullYear()} FFWeb. All rights reserved.
             </p>
           </div>
         </div>
