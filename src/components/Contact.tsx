@@ -1,11 +1,12 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, ExternalLink } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+
 const Contact = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -16,12 +17,15 @@ const Contact = () => {
     }, {
       threshold: 0.1
     });
+    
     const elements = document.querySelectorAll('[data-animate="true"]');
     elements.forEach(el => observer.observe(el));
+    
     return () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
+  
   const handleEmailClick = () => {
     navigator.clipboard.writeText("your-email@example.com");
     toast({
@@ -29,6 +33,7 @@ const Contact = () => {
       description: "You can now paste it into your email client."
     });
   };
+  
   return <section id="contact" className="py-20 px-4 bg-flutter-dark text-white">
       <div className="container mx-auto max-w-4xl text-center opacity-0" data-animate="true">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -61,7 +66,7 @@ const Contact = () => {
             <ExternalLink className="h-10 w-10 text-flutter-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">FlutterFlow Profile</h3>
             <p className="opacity-80 mb-4">Check out more of our work on FlutterFlow</p>
-            <a href="https://flutterflow.io" target="_blank" rel="noopener noreferrer">
+            <a href="https://marketplace.flutterflow.io/creator/a133be95dc6a2c59a0453dc15ac8dce90080c3d8" target="_blank" rel="noopener noreferrer">
               <Button className="bg-flutter-primary hover:bg-flutter-secondary">
                 Visit FlutterFlow Profile
               </Button>
@@ -71,4 +76,5 @@ const Contact = () => {
       </div>
     </section>;
 };
+
 export default Contact;
