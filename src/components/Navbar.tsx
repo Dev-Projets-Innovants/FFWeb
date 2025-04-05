@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
@@ -25,7 +26,7 @@ const Navbar = () => {
       });
     }
   };
-  return <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-white/80 backdrop-blur-md shadow-sm' : 'py-4 bg-transparent'}`}>
+  return <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-white/80 backdrop-blur-md shadow-sm' : 'py-4 bg-black/20 backdrop-blur-sm'}`}>
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="flex items-center">
           <span className="text-flutter-primary font-bold text-2xl">
@@ -34,19 +35,19 @@ const Navbar = () => {
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
-          <button onClick={() => scrollToSection('features')} className="text-flutter-dark hover:text-flutter-primary transition-colors text-base text-zinc-950">
+          <button onClick={() => scrollToSection('features')} className="text-white font-medium hover:text-flutter-primary transition-colors text-base">
             Features
           </button>
-          <button onClick={() => scrollToSection('how-it-works')} className="text-flutter-dark hover:text-flutter-primary transition-colors">
+          <button onClick={() => scrollToSection('how-it-works')} className="text-white font-medium hover:text-flutter-primary transition-colors">
             Process
           </button>
-          <button onClick={() => scrollToSection('portfolio')} className="text-flutter-dark hover:text-flutter-primary transition-colors">
+          <button onClick={() => scrollToSection('portfolio')} className="text-white font-medium hover:text-flutter-primary transition-colors">
             Portfolio
           </button>
-          <button onClick={() => scrollToSection('pricing')} className="text-flutter-dark hover:text-flutter-primary transition-colors">
+          <button onClick={() => scrollToSection('pricing')} className="text-white font-medium hover:text-flutter-primary transition-colors">
             Pricing
           </button>
-          <button onClick={() => scrollToSection('faq')} className="text-flutter-dark hover:text-flutter-primary transition-colors">
+          <button onClick={() => scrollToSection('faq')} className="text-white font-medium hover:text-flutter-primary transition-colors">
             FAQ
           </button>
         </div>
