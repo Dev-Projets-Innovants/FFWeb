@@ -44,7 +44,17 @@ const Contact = () => {
             <Mail className="h-10 w-10 text-flutter-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Email Us</h3>
             <p className="opacity-80 mb-4">Ready to discuss your project? Drop us a line!</p>
-            <Button variant="outline" className="border-flutter-primary text-flutter-primary hover:bg-flutter-primary hover:text-white" onClick={handleEmailClick}>dev.projets.innovants@gmail.com</Button>
+            <a 
+              href="mailto:dev.projets.innovants@gmail.com" 
+              className="inline-block"
+            >
+              <Button 
+                variant="outline" 
+                className="border-flutter-primary text-flutter-primary hover:bg-flutter-primary hover:text-white"
+              >
+                dev.projets.innovants@gmail.com
+              </Button>
+            </a>
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
