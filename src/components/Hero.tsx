@@ -79,7 +79,7 @@ const Hero = () => {
           
           <Button 
             variant="outline" 
-            className="text-white border-white hover:bg-white/10 hover:text-white text-base px-8 py-6"
+            className="text-white border-white hover:bg-white/20 hover:text-white text-base px-8 py-6"
             onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
             size="lg"
           >
