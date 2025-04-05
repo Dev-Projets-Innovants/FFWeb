@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="flex items-center">
           <span className="text-flutter-primary font-bold text-2xl">
-            FF<span className="text-flutter-dark">Web</span>
+            FF<span className="text-flutter-dark text-zinc-950">Web</span>
           </span>
         </div>
         
