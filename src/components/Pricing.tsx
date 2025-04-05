@@ -172,7 +172,12 @@ const Pricing = () => {
         </div>
         
         <p className="text-center mt-10 text-muted-foreground">
-          Need something specific? <a href="#contact" className="text-flutter-primary hover:underline">Contact us</a> for a custom quote.
+          Need something specific? <a 
+            href="mailto:dev.projets.innovants@gmail.com" 
+            className="text-flutter-primary hover:underline"
+          >
+            Contact us
+          </a> for a custom quote.
         </p>
       </div>
     </section>
