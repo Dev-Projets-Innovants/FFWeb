@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
+import NavLinks from './NavLinks';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -42,17 +43,7 @@ const Navbar = () => {
           </span>
         </div>
         
-        <div className="hidden md:flex items-center space-x-8">
-          {['Features', 'Process', 'Portfolio', 'Pricing', 'FAQ'].map((section) => (
-            <button 
-              key={section}
-              onClick={() => scrollToSection(section.toLowerCase())}
-              className="text-white font-semibold hover:text-flutter-primary transition-colors px-3 py-2 rounded-md bg-flutter-primary/20 hover:bg-flutter-primary/30"
-            >
-              {section}
-            </button>
-          ))}
-        </div>
+        <NavLinks scrollToSection={scrollToSection} />
 
         <Button className="bg-flutter-primary hover:bg-flutter-secondary" onClick={() => scrollToSection('contact')}>
           <Mail className="mr-2 h-4 w-4" />
