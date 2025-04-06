@@ -74,15 +74,15 @@ const Portfolio = () => {
       delay: 200
     },
     {
-      title: "Personal Portfolio",
-      category: "portfolio",
+      title: "Health and Wellness Portal",
+      category: "health",
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       projectUrl: "https://flutterflow.io",
       delay: 300
     },
     {
-      title: "SaaS Product Landing Page",
-      category: "saas",
+      title: "Administrative Dashboard",
+      category: "administrative",
       imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
       projectUrl: "https://flutterflow.io",
       delay: 400
@@ -95,8 +95,8 @@ const Portfolio = () => {
       delay: 500
     },
     {
-      title: "Creative Agency Showcase",
-      category: "portfolio",
+      title: "Professional Landing Page",
+      category: "landing-page",
       imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
       projectUrl: "https://flutterflow.io",
       delay: 600
@@ -119,7 +119,7 @@ const Portfolio = () => {
           Each project highlights different capabilities and use cases.
         </p>
         
-        <div className="flex justify-center mb-10 space-x-2">
+        <div className="flex flex-wrap justify-center mb-10 gap-2">
           <Button
             variant={filter === 'all' ? 'default' : 'outline'}
             className={filter === 'all' ? 'bg-flutter-primary hover:bg-flutter-secondary' : ''}
@@ -142,18 +142,25 @@ const Portfolio = () => {
             E-commerce
           </Button>
           <Button
-            variant={filter === 'portfolio' ? 'default' : 'outline'}
-            className={filter === 'portfolio' ? 'bg-flutter-primary hover:bg-flutter-secondary' : ''}
-            onClick={() => setFilter('portfolio')}
+            variant={filter === 'health' ? 'default' : 'outline'}
+            className={filter === 'health' ? 'bg-flutter-primary hover:bg-flutter-secondary' : ''}
+            onClick={() => setFilter('health')}
           >
-            Portfolio
+            Health
           </Button>
           <Button
-            variant={filter === 'saas' ? 'default' : 'outline'}
-            className={filter === 'saas' ? 'bg-flutter-primary hover:bg-flutter-secondary' : ''}
-            onClick={() => setFilter('saas')}
+            variant={filter === 'administrative' ? 'default' : 'outline'}
+            className={filter === 'administrative' ? 'bg-flutter-primary hover:bg-flutter-secondary' : ''}
+            onClick={() => setFilter('administrative')}
           >
-            SaaS
+            Administrative
+          </Button>
+          <Button
+            variant={filter === 'landing-page' ? 'default' : 'outline'}
+            className={filter === 'landing-page' ? 'bg-flutter-primary hover:bg-flutter-secondary' : ''}
+            onClick={() => setFilter('landing-page')}
+          >
+            Landing Page
           </Button>
         </div>
         
