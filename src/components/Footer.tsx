@@ -19,7 +19,7 @@ const Footer = () => {
           
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-4 mb-4">
-              <a href="#" className="text-white/70 hover:text-flutter-primary transition-colors">
+              <a href="https://github.com/Wambaforestin" className="text-white/70 hover:text-flutter-primary transition-colors">
                 <Github className="h-5 w-5" />
               </a>
             </div>
