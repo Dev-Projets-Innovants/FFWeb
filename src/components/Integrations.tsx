@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
@@ -11,7 +10,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from '@/components/ui/button';
 import { 
   Database, CalendarClock, CreditCard, FileSpreadsheet, Notebook, 
-  Zap, Search, MessageSquareCode, Shield, Mail, Package
+  Zap, Search, MessageSquareCode, Shield, Mail, Package, Slack, Cloud
 } from 'lucide-react';
 
 interface IntegrationProps {
@@ -184,6 +183,20 @@ const integrationsList: IntegrationProps[] = [
     connection: "Discord API and webhooks",
     benefit: "Connect your community through Discord"
   },
+  {
+    name: "Slack",
+    icon: <Slack className="h-10 w-10 text-primary" />,
+    description: "Team communication platform",
+    connection: "Webhooks and API integration",
+    benefit: "Streamline team communications and notifications"
+  },
+  {
+    name: "Cloud Services",
+    icon: <Cloud className="h-10 w-10 text-primary" />,
+    description: "Cloud deployment platforms",
+    connection: "Various cloud provider APIs",
+    benefit: "Scalable infrastructure and hosting solutions"
+  }
 ];
 
 const IntegrationCard: React.FC<IntegrationProps> = ({ name, icon, description, connection, benefit }) => {
@@ -193,16 +206,22 @@ const IntegrationCard: React.FC<IntegrationProps> = ({ name, icon, description, 
     <TooltipProvider>
       <Tooltip delayDuration={300}>
         <TooltipTrigger asChild>
-          <div className="flex flex-col items-center justify-center p-6 m-2 rounded-xl bg-card border border-border hover:shadow-lg hover:shadow-flutter-primary/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer w-[160px] h-[160px]">
-            <div className="flex flex-col items-center text-center gap-2">
-              {icon}
-              <h3 className="text-lg font-semibold mt-2">{name}</h3>
-              <p className="text-sm text-muted-foreground">{description}</p>
+          <div className="flex flex-col items-center justify-center p-6 m-2 rounded-xl bg-card border border-border 
+            hover:shadow-lg hover:shadow-flutter-primary/20 hover:-translate-y-1 
+            transition-all duration-300 cursor-pointer 
+            w-[180px] h-[180px] group">
+            <div className="flex flex-col items-center text-center gap-2 
+              group-hover:scale-105 transition-transform duration-300">
+              {React.cloneElement(icon as React.ReactElement, {
+                className: "h-10 w-10 text-primary group-hover:text-primary/80 transition-colors"
+              })}
+              <h3 className="text-lg font-semibold mt-2 truncate max-w-full">{name}</h3>
+              <p className="text-sm text-muted-foreground truncate max-w-full">{description}</p>
             </div>
           </div>
         </TooltipTrigger>
         {!isMobile && (
-          <TooltipContent side="bottom" className="max-w-[300px]">
+          <TooltipContent side="bottom" className="max-w-[300px] z-50">
             <div className="p-2">
               <p><span className="font-semibold">Connection:</span> {connection}</p>
               <p><span className="font-semibold">Benefit:</span> {benefit}</p>
@@ -218,7 +237,7 @@ const IntegrationDialog: React.FC<{ integrations: IntegrationProps[] }> = ({ int
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="secondary" className="mt-8">
+        <Button variant="secondary" className="mt-8 hover:bg-secondary/90 transition-colors">
           See All Integrations
         </Button>
       </DialogTrigger>
@@ -228,14 +247,19 @@ const IntegrationDialog: React.FC<{ integrations: IntegrationProps[] }> = ({ int
         </DialogHeader>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
           {integrations.map((integration, index) => (
-            <div key={index} className="p-4 rounded-lg border border-border bg-card">
+            <div key={index} className="p-4 rounded-lg border border-border bg-card 
+              hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center gap-3 mb-2">
                 {integration.icon}
-                <h3 className="text-lg font-semibold">{integration.name}</h3>
+                <h3 className="text-lg font-semibold truncate">{integration.name}</h3>
               </div>
-              <p className="text-muted-foreground mb-2">{integration.description}</p>
-              <p className="text-sm mb-1"><span className="font-semibold">Connection:</span> {integration.connection}</p>
-              <p className="text-sm"><span className="font-semibold">Benefit:</span> {integration.benefit}</p>
+              <p className="text-muted-foreground mb-2 truncate">{integration.description}</p>
+              <p className="text-sm mb-1 truncate">
+                <span className="font-semibold">Connection:</span> {integration.connection}
+              </p>
+              <p className="text-sm truncate">
+                <span className="font-semibold">Benefit:</span> {integration.benefit}
+              </p>
             </div>
           ))}
         </div>
@@ -248,22 +272,19 @@ const Integrations = () => {
   return (
     <section className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="container">
-        <h2 className="section-heading text-center">Powerful Integration with Your Website or Web App</h2>
+        <h2 className="section-heading text-center">Powerful Integrations with Your Website or Web App</h2>
         <p className="section-subheading text-center">
           Connect your FlutterFlow app to virtually any service or platform with our extensive integration options
         </p>
         
         <div className="relative mt-12">
-          {/* Infinite scroll container */}
           <div className="overflow-hidden w-full">
             <div className="flex integration-scroll">
-              {/* First set of items */}
               {integrationsList.map((integration, index) => (
                 <div key={`first-${index}`} className="flex-shrink-0">
                   <IntegrationCard {...integration} />
                 </div>
               ))}
-              {/* Duplicate for infinite scroll effect */}
               {integrationsList.map((integration, index) => (
                 <div key={`second-${index}`} className="flex-shrink-0">
                   <IntegrationCard {...integration} />
