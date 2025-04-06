@@ -42,3 +42,41 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #7E69AB;
 }
+
+/* Loading animation styles */
+@keyframes dots-pulse {
+  0%, 20% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+.dots-pulse {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.dots-pulse .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  animation: dots-pulse 1.5s infinite ease-in-out;
+}
+
+.dots-pulse .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dots-pulse .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
