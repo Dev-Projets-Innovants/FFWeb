@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
+import { Mail, Puzzle } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -49,6 +49,12 @@ const Navbar = () => {
           </button>
           <button onClick={() => scrollToSection('portfolio')} className={`font-medium hover:text-flutter-primary transition-colors ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
             Portfolio
+          </button>
+          <button onClick={() => scrollToSection('integrations')} className={`font-medium hover:text-flutter-primary transition-colors ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
+            <span className="flex items-center">
+              <Puzzle className="mr-1 h-4 w-4" />
+              Integrations
+            </span>
           </button>
           <button onClick={() => scrollToSection('pricing')} className={`font-medium hover:text-flutter-primary transition-colors ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
             Pricing
