@@ -60,7 +60,7 @@ const Navbar = () => {
             scrollToSection(item.id);
             if (onClick) onClick();
           }} 
-          className={`font-medium hover:text-flutter-primary transition-colors text-base ${scrolled ? 'text-zinc-800' : 'text-white'} ${isMobile ? 'flex items-center py-4 px-2 w-full justify-start' : ''}`}
+          className={`font-medium hover:text-flutter-primary transition-colors text-base ${scrolled ? 'text-zinc-800' : 'text-white'} ${isMobile ? 'flex items-center py-4 px-2 w-full justify-start text-zinc-800' : ''}`}
         >
           <span className="flex items-center">
             {item.icon}
@@ -85,33 +85,35 @@ const Navbar = () => {
           <NavLinks />
         </div>
 
-        {/* Mobile Navigation */}
-        <div className="md:hidden flex items-center">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" className="p-2">
-                <Menu className={`h-6 w-6 ${scrolled ? 'text-black' : 'text-white'}`} />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[80%] sm:w-[350px]">
-              <div className="py-8">
-                <div className="flex justify-between items-center mb-8">
-                  <span className="text-flutter-primary font-bold text-2xl">
-                    FFWeb
-                  </span>
+        <div className="flex items-center space-x-4">
+          <Button className="bg-flutter-primary hover:bg-flutter-secondary" onClick={() => scrollToSection('contact')}>
+            <Mail className="mr-2 h-4 w-4" />
+            Contact Us
+          </Button>
+          
+          {/* Mobile Navigation - Moved after Contact Us button */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" className="p-2">
+                  <Menu className={`h-6 w-6 ${scrolled ? 'text-black' : 'text-white'}`} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[80%] sm:w-[350px]">
+                <div className="py-8">
+                  <div className="flex justify-between items-center mb-8">
+                    <span className="text-flutter-primary font-bold text-2xl">
+                      FFWeb
+                    </span>
+                  </div>
+                  <nav className="flex flex-col gap-1">
+                    <NavLinks onClick={() => document.querySelector('[data-state="open"]')?.setAttribute('data-state', 'closed')} />
+                  </nav>
                 </div>
-                <nav className="flex flex-col gap-1">
-                  <NavLinks onClick={() => document.querySelector('[data-state="open"]')?.setAttribute('data-state', 'closed')} />
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-
-        <Button className="bg-flutter-primary hover:bg-flutter-secondary" onClick={() => scrollToSection('contact')}>
-          <Mail className="mr-2 h-4 w-4" />
-          Contact Us
-        </Button>
       </div>
     </nav>
   );
