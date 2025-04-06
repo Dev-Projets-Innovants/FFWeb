@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Database, CalendarClock, Cloud, Package, Code, Zap, Cog } from 'lucide-react';
 import {
   Tooltip,
@@ -77,8 +77,6 @@ const integrations: Integration[] = [
 ];
 
 const Integrations = () => {
-  const [open, setOpen] = useState<string | null>(null);
-  
   return (
     <section id="integrations" className="py-20 px-4 bg-white">
       <div className="container mx-auto max-w-6xl text-center">
@@ -99,34 +97,33 @@ const Integrations = () => {
               {integrations.map((integration, index) => (
                 <TooltipProvider key={index}>
                   <Tooltip>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="flex flex-col items-center hover-scale cursor-pointer">
-                          <div 
-                            className="p-6 rounded-xl bg-white shadow-lg mb-4"
-                            style={{ color: integration.color }}
-                          >
-                            {integration.icon}
-                          </div>
-                          <h3 className="font-semibold">{integration.name}</h3>
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent>
-                        <DialogHeader>
-                          <DialogTitle className="flex items-center gap-2">
-                            <span style={{ color: integration.color }}>
-                              {React.cloneElement(integration.icon as React.ReactElement, { className: "h-6 w-6" })}
-                            </span>
-                            {integration.name} Integration
-                          </DialogTitle>
-                          <DialogDescription className="pt-4 text-left">
-                            {integration.longDescription}
-                          </DialogDescription>
-                        </DialogHeader>
-                      </DialogContent>
-                    </Dialog>
-                    <TooltipTrigger>
-                      <span className="sr-only">{integration.name}</span>
+                    <TooltipTrigger asChild>
+                      <div className="flex flex-col items-center hover-scale cursor-pointer">
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <div 
+                              className="p-6 rounded-xl bg-white shadow-lg mb-4"
+                              style={{ color: integration.color }}
+                            >
+                              {integration.icon}
+                            </div>
+                          </DialogTrigger>
+                          <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle className="flex items-center gap-2">
+                                <span style={{ color: integration.color }}>
+                                  {React.cloneElement(integration.icon as React.ReactElement, { className: "h-6 w-6" })}
+                                </span>
+                                {integration.name} Integration
+                              </DialogTitle>
+                              <DialogDescription className="pt-4 text-left">
+                                {integration.longDescription}
+                              </DialogDescription>
+                            </DialogHeader>
+                          </DialogContent>
+                        </Dialog>
+                        <h3 className="font-semibold">{integration.name}</h3>
+                      </div>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>{integration.description}</p>
@@ -138,34 +135,33 @@ const Integrations = () => {
               {integrations.map((integration, index) => (
                 <TooltipProvider key={`dup-${index}`}>
                   <Tooltip>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="flex flex-col items-center hover-scale cursor-pointer">
-                          <div 
-                            className="p-6 rounded-xl bg-white shadow-lg mb-4"
-                            style={{ color: integration.color }}
-                          >
-                            {integration.icon}
-                          </div>
-                          <h3 className="font-semibold">{integration.name}</h3>
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent>
-                        <DialogHeader>
-                          <DialogTitle className="flex items-center gap-2">
-                            <span style={{ color: integration.color }}>
-                              {React.cloneElement(integration.icon as React.ReactElement, { className: "h-6 w-6" })}
-                            </span>
-                            {integration.name} Integration
-                          </DialogTitle>
-                          <DialogDescription className="pt-4 text-left">
-                            {integration.longDescription}
-                          </DialogDescription>
-                        </DialogHeader>
-                      </DialogContent>
-                    </Dialog>
-                    <TooltipTrigger>
-                      <span className="sr-only">{integration.name}</span>
+                    <TooltipTrigger asChild>
+                      <div className="flex flex-col items-center hover-scale cursor-pointer">
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <div 
+                              className="p-6 rounded-xl bg-white shadow-lg mb-4"
+                              style={{ color: integration.color }}
+                            >
+                              {integration.icon}
+                            </div>
+                          </DialogTrigger>
+                          <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle className="flex items-center gap-2">
+                                <span style={{ color: integration.color }}>
+                                  {React.cloneElement(integration.icon as React.ReactElement, { className: "h-6 w-6" })}
+                                </span>
+                                {integration.name} Integration
+                              </DialogTitle>
+                              <DialogDescription className="pt-4 text-left">
+                                {integration.longDescription}
+                              </DialogDescription>
+                            </DialogHeader>
+                          </DialogContent>
+                        </Dialog>
+                        <h3 className="font-semibold">{integration.name}</h3>
+                      </div>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>{integration.description}</p>
