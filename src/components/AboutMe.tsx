@@ -1,7 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Progress } from '@/components/ui/progress';
-import { Code, Database, Layout, Server, Wrench } from 'lucide-react';
+import { Code, Database, Layout, Server, Wrench, CloudLightning } from 'lucide-react';
 
 interface SkillProps {
   name: string;
@@ -76,9 +75,9 @@ const AboutMe = () => {
       delay: 300
     },
     { 
-      name: "Backend as a Service (Supabase)", 
+      name: "Backend as a Service (Supabase & Firebase)", 
       percentage: 90, 
-      icon: <Wrench className="h-5 w-5" />,
+      icon: <CloudLightning className="h-5 w-5" />,
       delay: 500
     },
     { 
