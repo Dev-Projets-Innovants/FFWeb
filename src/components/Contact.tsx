@@ -27,7 +27,7 @@ const Contact = () => {
   }, []);
   
   const handleEmailClick = () => {
-    navigator.clipboard.writeText("your-email@example.com");
+    navigator.clipboard.writeText("dev.projets.innovants@gmail.com");
     toast({
       title: "Email copied to clipboard",
       description: "You can now paste it into your email client."
@@ -47,7 +47,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
             <Mail className="h-10 w-10 text-flutter-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Email Us</h3>
+            <h3 className="text-xl font-semibold mb-2">Email Me</h3>
             <p className="opacity-80 mb-4">Ready to discuss your project? Drop us a line!</p>
             <a 
               href="mailto:dev.projets.innovants@gmail.com" 
