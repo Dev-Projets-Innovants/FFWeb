@@ -1,10 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Mail, Puzzle } from "lucide-react";
+import { Mail, Menu, Puzzle, X } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +38,41 @@ const Navbar = () => {
     }
   };
 
-  return <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-white/80 backdrop-blur-md shadow-sm' : 'py-4 bg-black/20 backdrop-blur-sm'}`}>
+  const navigationItems = [
+    { id: 'features', label: 'Features' },
+    { id: 'how-it-works', label: 'Process' },
+    { id: 'portfolio', label: 'Portfolio' },
+    { 
+      id: 'integrations', 
+      label: 'Integrations',
+      icon: <Puzzle className="mr-1 h-4 w-4" />
+    },
+    { id: 'pricing', label: 'Pricing' },
+    { id: 'faq', label: 'FAQ' },
+  ];
+
+  const NavLinks = ({ onClick = undefined }) => (
+    <>
+      {navigationItems.map((item) => (
+        <button 
+          key={item.id}
+          onClick={() => {
+            scrollToSection(item.id);
+            if (onClick) onClick();
+          }} 
+          className={`font-medium hover:text-flutter-primary transition-colors text-base ${scrolled ? 'text-zinc-800' : 'text-white'} ${isMobile ? 'flex items-center py-4 px-2 w-full justify-start' : ''}`}
+        >
+          <span className="flex items-center">
+            {item.icon}
+            {item.label}
+          </span>
+        </button>
+      ))}
+    </>
+  );
+
+  return (
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-white/80 backdrop-blur-md shadow-sm' : 'py-4 bg-black/20 backdrop-blur-sm'}`}>
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="flex items-center">
           <span className="text-flutter-primary font-bold text-2xl">
@@ -43,28 +80,32 @@ const Navbar = () => {
           </span>
         </div>
         
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <button onClick={() => scrollToSection('features')} className={`font-medium hover:text-flutter-primary transition-colors text-base ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-            Features
-          </button>
-          <button onClick={() => scrollToSection('how-it-works')} className={`font-medium hover:text-flutter-primary transition-colors ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-            Process
-          </button>
-          <button onClick={() => scrollToSection('portfolio')} className={`font-medium hover:text-flutter-primary transition-colors ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-            Portfolio
-          </button>
-          <button onClick={() => scrollToSection('integrations')} className={`font-medium hover:text-flutter-primary transition-colors ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-            <span className="flex items-center">
-              <Puzzle className="mr-1 h-4 w-4" />
-              Integrations
-            </span>
-          </button>
-          <button onClick={() => scrollToSection('pricing')} className={`font-medium hover:text-flutter-primary transition-colors ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-            Pricing
-          </button>
-          <button onClick={() => scrollToSection('faq')} className={`font-medium hover:text-flutter-primary transition-colors ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-            FAQ
-          </button>
+          <NavLinks />
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden flex items-center">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" className="p-2">
+                <Menu className={`h-6 w-6 ${scrolled ? 'text-black' : 'text-white'}`} />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[80%] sm:w-[350px]">
+              <div className="py-8">
+                <div className="flex justify-between items-center mb-8">
+                  <span className="text-flutter-primary font-bold text-2xl">
+                    FFWeb
+                  </span>
+                </div>
+                <nav className="flex flex-col gap-1">
+                  <NavLinks onClick={() => document.querySelector('[data-state="open"]')?.setAttribute('data-state', 'closed')} />
+                </nav>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
 
         <Button className="bg-flutter-primary hover:bg-flutter-secondary" onClick={() => scrollToSection('contact')}>
@@ -72,7 +113,8 @@ const Navbar = () => {
           Contact Us
         </Button>
       </div>
-    </nav>;
+    </nav>
+  );
 };
 
 export default Navbar;
