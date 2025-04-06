@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -21,6 +21,9 @@ const Footer = () => {
             <div className="flex space-x-4 mb-4">
               <a href="https://github.com/Wambaforestin" className="text-white/70 hover:text-flutter-primary transition-colors">
                 <Github className="h-5 w-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/wambaforestin/" className="text-white/70 hover:text-flutter-primary transition-colors">
+                <Linkedin className="h-5 w-5" />
               </a>
             </div>
             <p className="text-white/50 text-sm">
