@@ -25,20 +25,28 @@ body {
   transform: translateY(0);
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with vibrant purple theme */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px; /* Slightly wider for better visibility */
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #F1F0FB; /* Soft purple-gray background */
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9b87f5;
-  border-radius: 5px;
+  background: #9b87f5; /* Primary purple from the color palette */
+  border-radius: 10px;
+  border: 3px solid #F1F0FB; /* Creates a subtle border effect */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7E69AB;
+  background: #7E69AB; /* Secondary purple for hover state */
+}
+
+/* Optional: For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9b87f5 #F1F0FB;
 }
