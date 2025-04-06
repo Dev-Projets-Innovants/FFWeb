@@ -3,6 +3,7 @@ import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { IntegrationProps } from './IntegrationCard';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface IntegrationDialogProps {
   integrations: IntegrationProps[];
@@ -16,28 +17,34 @@ const IntegrationDialog: React.FC<IntegrationDialogProps> = ({ integrations }) =
           See All Integrations
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[80vh]">
         <DialogHeader>
           <DialogTitle className="text-2xl">All Available Integrations</DialogTitle>
         </DialogHeader>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-          {integrations.map((integration, index) => (
-            <div key={index} className="p-4 rounded-lg border border-border bg-card 
-              hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-center gap-3 mb-2">
-                {integration.icon}
-                <h3 className="text-lg font-semibold truncate">{integration.name}</h3>
+        <ScrollArea className="h-[60vh] pr-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            {integrations.map((integration, index) => (
+              <div key={index} className="p-4 rounded-lg border border-border bg-card 
+                hover:shadow-md transition-shadow duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  {React.cloneElement(integration.icon as React.ReactElement, {
+                    className: "h-8 w-8 text-primary"
+                  })}
+                  <h3 className="text-lg font-semibold">{integration.name}</h3>
+                </div>
+                <p className="text-muted-foreground mb-3">{integration.description}</p>
+                <div className="space-y-2">
+                  <p className="text-sm">
+                    <span className="font-semibold">Connection:</span> {integration.connection}
+                  </p>
+                  <p className="text-sm">
+                    <span className="font-semibold">Benefit:</span> {integration.benefit}
+                  </p>
+                </div>
               </div>
-              <p className="text-muted-foreground mb-2 truncate">{integration.description}</p>
-              <p className="text-sm mb-1 truncate">
-                <span className="font-semibold">Connection:</span> {integration.connection}
-              </p>
-              <p className="text-sm truncate">
-                <span className="font-semibold">Benefit:</span> {integration.benefit}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </ScrollArea>
       </DialogContent>
     </Dialog>
   );
