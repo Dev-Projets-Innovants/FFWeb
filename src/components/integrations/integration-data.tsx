@@ -2,11 +2,18 @@
 import React from 'react';
 import { 
   Database, CalendarClock, CreditCard, FileSpreadsheet, Notebook, 
-  Zap, Search, MessageSquareCode, Shield, Mail, Package, Slack, Cloud
+  Zap, Search, MessageSquareCode, Shield, Mail, Package, Slack, Cloud, Key
 } from 'lucide-react';
 import { IntegrationProps } from './IntegrationCard';
 
 export const integrationsList: IntegrationProps[] = [
+  {
+    name: "API Keys",
+    icon: <Key className="h-10 w-10 text-primary" />,
+    description: "Authentication credentials",
+    connection: "Secure credential storage",
+    benefit: "Integrate with services requiring API authentication"
+  },
   {
     name: "Supabase",
     icon: <Database className="h-10 w-10 text-primary" />,
