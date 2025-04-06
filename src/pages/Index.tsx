@@ -5,12 +5,12 @@ import Navbar from '@/components/Navbar';
 import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
 import Portfolio from '@/components/Portfolio';
-import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import Integrations from '@/components/Integrations';
+import AboutMe from '@/components/AboutMe';
 
 const Index = () => {
   useEffect(() => {
@@ -22,11 +22,11 @@ const Index = () => {
     <div className="min-h-screen overflow-hidden">
       <Navbar />
       <Hero />
+      <AboutMe />
       <Features />
       <HowItWorks />
       <Portfolio />
       <Integrations />
-      <Pricing />
       <FAQ />
       <Contact />
       <Footer />

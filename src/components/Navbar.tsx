@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail, Menu, Puzzle, X } from "lucide-react";
@@ -39,6 +38,7 @@ const Navbar = () => {
   };
 
   const navigationItems = [
+    { id: 'about-me', label: 'About Me' },
     { id: 'features', label: 'Features' },
     { id: 'how-it-works', label: 'Process' },
     { id: 'portfolio', label: 'Portfolio' },
@@ -47,7 +47,6 @@ const Navbar = () => {
       label: 'Integrations',
       icon: <Puzzle className="mr-1 h-4 w-4" />
     },
-    { id: 'pricing', label: 'Pricing' },
     { id: 'faq', label: 'FAQ' },
   ];
 
