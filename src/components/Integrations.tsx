@@ -147,9 +147,11 @@ const Integrations = () => {
           
           <div className="flex items-center overflow-hidden">
             <div 
-              className="flex space-x-16 animate-none" 
+              className="flex space-x-16 animate-marquee"
               style={{ 
-                animation: `scroll ${scrollSpeed * integrations.length}s linear infinite`,
+                animationDuration: `${scrollSpeed * integrations.length}s`,
+                animationTimingFunction: 'linear',
+                animationIterationCount: 'infinite',
                 width: "auto"
               }}
             >
@@ -165,16 +167,30 @@ const Integrations = () => {
         </div>
       </div>
       
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
+      <style>
+        {`
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${integrations.length * 100}%);
+            }
           }
-          100% {
-            transform: translateX(-${integrations.length * 100}%);
+          
+          .animate-marquee {
+            animation-name: marquee;
           }
-        }
-      `}</style>
+          
+          .hover-scale {
+            transition: transform 0.2s ease-in-out;
+          }
+          
+          .hover-scale:hover {
+            transform: scale(1.05);
+          }
+        `}
+      </style>
     </section>
   );
 };
