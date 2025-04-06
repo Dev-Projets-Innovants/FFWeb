@@ -31,7 +31,11 @@ const AppRoutes = () => {
       hideLoading();
     }, 800);
     
-    return () => clearTimeout(timer);
+    // Clear the timeout if the component unmounts or location changes again
+    return () => {
+      clearTimeout(timer);
+      hideLoading(); // Ensure loading is hidden on cleanup
+    };
   }, [location.pathname, showLoading, hideLoading]);
   
   return (
