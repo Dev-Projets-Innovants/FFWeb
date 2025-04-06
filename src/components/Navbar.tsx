@@ -26,9 +26,12 @@ const Navbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
+      console.log(`Scrolling to element with id: ${id}`);
       element.scrollIntoView({
         behavior: 'smooth'
       });
+    } else {
+      console.log(`Element with id: ${id} not found`);
     }
   };
 

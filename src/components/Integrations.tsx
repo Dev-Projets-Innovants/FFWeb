@@ -7,7 +7,7 @@ import { integrationsList } from './integrations/integration-data';
 
 const Integrations = () => {
   return (
-    <section className="py-16 md:py-24 bg-background overflow-hidden">
+    <section id="integrations" className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="container">
         <h2 className="section-heading text-center">Powerful Integrations with Your Website or Web App</h2>
         <p className="section-subheading text-center">
