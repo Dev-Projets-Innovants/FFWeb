@@ -6,7 +6,7 @@ const IntegrationScrollStyles = () => {
     <style dangerouslySetInnerHTML={{
       __html: `
         .integration-scroll {
-          animation: scroll 60s linear infinite;
+          animation: scroll 30s linear infinite;
         }
         
         @keyframes scroll {
