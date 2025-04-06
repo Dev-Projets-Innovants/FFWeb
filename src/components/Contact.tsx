@@ -65,7 +65,7 @@ const Contact = () => {
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
             <ExternalLink className="h-10 w-10 text-flutter-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">FlutterFlow Profile</h3>
-            <p className="opacity-80 mb-4">Check out more of our work on FlutterFlow</p>
+            <p className="opacity-80 mb-4">Check out more of my work on the FlutterFlow marketplace</p>
             <a href="https://marketplace.flutterflow.io/creator/a133be95dc6a2c59a0453dc15ac8dce90080c3d8" target="_blank" rel="noopener noreferrer">
               <Button className="bg-flutter-primary hover:bg-flutter-secondary">
                 Visit FlutterFlow Profile
