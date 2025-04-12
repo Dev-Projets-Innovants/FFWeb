@@ -1,6 +1,7 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Progress } from '@/components/ui/progress';
-import { Code, Database, Layout, Server, Wrench, CloudLightning } from 'lucide-react';
+import { Code, Database, Layout, Server, CloudLightning } from 'lucide-react';
 
 interface SkillProps {
   name: string;
