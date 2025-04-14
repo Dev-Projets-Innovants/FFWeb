@@ -48,11 +48,12 @@ const Hero = () => {
       {/* Content container */}
       <div className="container mx-auto max-w-3xl z-10 text-center px-4">
         <h1 ref={titleRef} className="opacity-0 text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-          Build Fast, Beautiful <span className="text-flutter-primary block mt-2">Websites & Web Apps</span>
+          Build Fast, Beautiful <span className="text-flutter-primary block mt-2">Websites, Landing Pages & Web Apps</span>
         </h1>
         
         <p ref={subtitleRef} className="opacity-0 text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Easily create stunning Landing Pages & Web Applications with FlutterFlow's powerful low-code platform
+          Transform your ideas into stunning digital experiences — 
+          Websites, Landing Pages, and Web Applications built with FlutterFlow's powerful low-code platform
         </p>
         
         <div ref={ctaRef} className="opacity-0 flex flex-col sm:flex-row justify-center gap-4 mb-8">
