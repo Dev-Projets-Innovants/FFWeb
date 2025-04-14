@@ -70,7 +70,7 @@ const AboutMe = () => {
 
   const skills = [
     { 
-      name: "Low-code Development (FlutterFlow)", 
+      name: "Low-code Development (FlutterFlow & Flutter)", 
       percentage: 90, 
       icon: <Code className="h-5 w-5" />,
       delay: 300
@@ -110,8 +110,8 @@ const AboutMe = () => {
         
         <p className="section-subheading text-center opacity-0 max-w-3xl mx-auto" data-animate="true" style={{ animationDelay: '200ms' }}>
           I'm a young student based in France, currently studying Computer Engineering. 
-          I'm deeply passionate about low-code development, and I'm actively building 
-          my online presence through creative digital projects and modern web apps.
+          I'm deeply passionate about low-code development with FlutterFlow and Flutter, 
+          and I'm actively building my online presence through creative digital projects and modern web apps.
         </p>
         
         <div className="max-w-2xl mx-auto mt-12">
