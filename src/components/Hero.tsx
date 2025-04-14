@@ -1,7 +1,9 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 const Hero = () => {
   const isMobile = useIsMobile();
   const scrollToContact = () => {
@@ -17,6 +19,7 @@ const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Stagger animations for a more dynamic entrance
     if (titleRef.current) {
@@ -33,6 +36,7 @@ const Hero = () => {
       }
     }, 400);
   }, []);
+
   return <div className="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center py-16 px-4" style={{
     backgroundImage: "url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80')",
     backgroundPosition: "center",
@@ -44,12 +48,11 @@ const Hero = () => {
       {/* Content container */}
       <div className="container mx-auto max-w-3xl z-10 text-center px-4">
         <h1 ref={titleRef} className="opacity-0 text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-          Fast, Beautiful, <span className="text-flutter-primary block mt-2">FlutterFlow Websites</span>
+          Build Fast, Beautiful <span className="text-flutter-primary block mt-2">Websites & Web Apps</span>
         </h1>
         
         <p ref={subtitleRef} className="opacity-0 text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Elevate your online presence with stunning, high-performance websites
-          built using the power and flexibility of FlutterFlow.
+          Easily create stunning Landing Pages & Web Applications with FlutterFlow's powerful low-code platform
         </p>
         
         <div ref={ctaRef} className="opacity-0 flex flex-col sm:flex-row justify-center gap-4 mb-8">
@@ -67,4 +70,5 @@ const Hero = () => {
       </div>
     </div>;
 };
+
 export default Hero;
