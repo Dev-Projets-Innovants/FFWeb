@@ -37,11 +37,11 @@ const Contact = () => {
   return <section id="contact" className="py-20 px-4 bg-flutter-dark text-white">
       <div className="container mx-auto max-w-4xl text-center opacity-0" data-animate="true">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Upgrade Your <span className="text-flutter-primary">Online Presence</span>
+          Ready to Build Your Next <span className="text-flutter-primary">Digital Project</span>?
         </h2>
         
         <p className="text-xl opacity-80 mb-10 max-w-2xl mx-auto">
-          Fast, Beautiful, Powerful Websites Built Just For You!
+          Whether you need a website, landing page, or web application, let's create something amazing together with FlutterFlow!
         </p>
         
         <div className="grid md:grid-cols-2 gap-8 text-center">

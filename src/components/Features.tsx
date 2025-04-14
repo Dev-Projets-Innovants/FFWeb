@@ -47,12 +47,12 @@ const Features = () => {
     <section id="features" className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <h2 className="section-heading text-center">
-          Why Choose <span className="text-flutter-primary">FlutterFlow</span> Websites?
+          Why Choose <span className="text-flutter-primary">FlutterFlow</span> for Your Project?
         </h2>
         
         <p className="section-subheading text-center">
-          Our websites don't just look great—they perform exceptionally well, delivering a 
-          seamless experience that keeps visitors engaged and converts them into customers.
+          From stunning websites to powerful web applications, we deliver exceptional digital experiences 
+          that drive results and keep your visitors engaged.
         </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

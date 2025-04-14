@@ -57,8 +57,8 @@ const HowItWorks = () => {
         </h2>
         
         <p className="section-subheading text-center">
-          Our streamlined process makes getting your FlutterFlow website up and running 
-          quick and painless - without sacrificing quality or customization.
+          From concept to launch, our streamlined process makes building your website, landing page,
+          or web application with FlutterFlow quick and efficient - without compromising on quality.
         </p>
         
         <div className="grid md:grid-cols-3 gap-16 mt-16 relative">
