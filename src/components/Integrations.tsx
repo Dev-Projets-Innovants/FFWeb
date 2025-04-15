@@ -4,6 +4,8 @@ import IntegrationCard from './integrations/IntegrationCard';
 import IntegrationDialog from './integrations/IntegrationDialog';
 import IntegrationScrollStyles from './integrations/IntegrationScrollStyles';
 import { integrationsList } from './integrations/integration-data';
+import { ReactJs, Database, LayoutDashboard } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
 
 const Integrations = () => {
   return (
@@ -33,6 +35,43 @@ const Integrations = () => {
         
         <div className="flex justify-center">
           <IntegrationDialog integrations={integrationsList} />
+        </div>
+
+        <Separator className="my-16" />
+
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold text-center mb-8">
+            Seamless Platform Connectivity
+          </h3>
+          <p className="text-center text-muted-foreground mb-12">
+            FlutterFlow web apps and websites can connect to external platforms and applications, sharing resources and data for a unified experience.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all text-center">
+              <div className="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
+                <LayoutDashboard className="h-8 w-8 text-primary" />
+              </div>
+              <h4 className="font-semibold mb-2">FlutterFlow Client App</h4>
+              <p className="text-sm text-muted-foreground">Beautiful, responsive client-facing applications</p>
+            </div>
+
+            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all text-center">
+              <div className="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
+                <Database className="h-8 w-8 text-primary" />
+              </div>
+              <h4 className="font-semibold mb-2">Supabase Backend</h4>
+              <p className="text-sm text-muted-foreground">Secure database and authentication services</p>
+            </div>
+
+            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all text-center">
+              <div className="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
+                <ReactJs className="h-8 w-8 text-primary" />
+              </div>
+              <h4 className="font-semibold mb-2">Custom Admin Panel</h4>
+              <p className="text-sm text-muted-foreground">Powerful admin interfaces with React or Vue.js</p>
+            </div>
+          </div>
         </div>
       </div>
       <IntegrationScrollStyles />
