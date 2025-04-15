@@ -4,7 +4,7 @@ import IntegrationCard from './integrations/IntegrationCard';
 import IntegrationDialog from './integrations/IntegrationDialog';
 import IntegrationScrollStyles from './integrations/IntegrationScrollStyles';
 import { integrationsList } from './integrations/integration-data';
-import { ReactJs, Database, LayoutDashboard } from 'lucide-react';
+import { Code, Database, LayoutDashboard } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 const Integrations = () => {
@@ -66,7 +66,7 @@ const Integrations = () => {
 
             <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all text-center">
               <div className="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
-                <ReactJs className="h-8 w-8 text-primary" />
+                <Code className="h-8 w-8 text-primary" />
               </div>
               <h4 className="font-semibold mb-2">Custom Admin Panel</h4>
               <p className="text-sm text-muted-foreground">Powerful admin interfaces with React or Vue.js</p>
