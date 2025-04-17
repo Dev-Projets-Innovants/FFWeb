@@ -1,8 +1,6 @@
-
 import React from 'react';
 import IntegrationCard from './integrations/IntegrationCard';
 import IntegrationDialog from './integrations/IntegrationDialog';
-import IntegrationScrollStyles from './integrations/IntegrationScrollStyles';
 import { integrationsList } from './integrations/integration-data';
 import { Code, Database, LayoutDashboard } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
