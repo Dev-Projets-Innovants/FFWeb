@@ -1,4 +1,3 @@
-
 import React from 'react';
 import IntegrationCard from './integrations/IntegrationCard';
 import IntegrationDialog from './integrations/IntegrationDialog';
@@ -13,7 +12,7 @@ const Integrations = () => {
       <div className="container">
         <h2 className="section-heading text-center">Powerful Integrations with Your Website or Web App</h2>
         <p className="section-subheading text-center">
-          Connect your FlutterFlow app to virtually any service or platform with our extensive integration options
+          Connect your FlutterFlow app to virtually any service or platform with our extensive integration options, leveraging both native FlutterFlow connectors and robust API integrations
         </p>
         
         <div className="relative mt-12">
