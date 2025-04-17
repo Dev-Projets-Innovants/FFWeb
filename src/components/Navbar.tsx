@@ -111,10 +111,10 @@ const Navbar = () => {
                 <div className="p-4 border-t border-gray-200">
                   <a 
                     href="mailto:dev.projets.innovants@gmail.com" 
-                    className="flex items-center justify-center text-flutter-primary font-bold hover:text-flutter-secondary transition-colors group"
+                    className="flex items-center justify-center text-flutter-primary font-medium hover:text-flutter-secondary transition-colors"
                   >
-                    <Mail className="mr-2 h-4 w-4 group-hover:animate-pulse" />
-                    <span className="text-sm tracking-tight">dev.projets.innovants@gmail.com</span>
+                    <Mail className="mr-2 h-4 w-4" />
+                    dev.projets.innovants@gmail.com
                   </a>
                 </div>
               </SheetContent>
