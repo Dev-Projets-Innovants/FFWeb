@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
@@ -87,7 +86,7 @@ const Hero = () => {
               behavior: 'smooth'
             })} 
             size="lg" 
-            className="border-white hover:bg-white/20 text-white hover:text-white text-sm md:text-base px-6 md:px-8 py-5 md:py-6 mt-3 sm:mt-0 w-full sm:w-auto"
+            className="border-white hover:bg-white/20 text-white hover:text-black text-sm md:text-base px-6 md:px-8 py-5 md:py-6 mt-3 sm:mt-0 w-full sm:w-auto"
           >
             Explore Projects
           </Button>
