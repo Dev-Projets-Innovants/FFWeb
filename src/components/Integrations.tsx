@@ -1,9 +1,11 @@
+
 import React from 'react';
 import IntegrationCard from './integrations/IntegrationCard';
 import IntegrationDialog from './integrations/IntegrationDialog';
 import { integrationsList } from './integrations/integration-data';
 import { Code, Database, LayoutDashboard } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import IntegrationScrollStyles from './integrations/IntegrationScrollStyles';
 
 const Integrations = () => {
   return (
@@ -15,8 +17,8 @@ const Integrations = () => {
         </p>
         
         <div className="relative mt-12">
-          <div className="overflow-hidden w-full">
-            <div className="flex integration-scroll">
+          <div className="integration-scroll-container">
+            <div className="integration-scroll">
               {integrationsList.map((integration, index) => (
                 <div key={`first-${index}`} className="flex-shrink-0">
                   <IntegrationCard {...integration} />
@@ -30,6 +32,8 @@ const Integrations = () => {
             </div>
           </div>
         </div>
+        
+        <IntegrationScrollStyles />
         
         <div className="flex justify-center">
           <IntegrationDialog integrations={integrationsList} />

@@ -6,6 +6,8 @@ const IntegrationScrollStyles = () => {
     <style dangerouslySetInnerHTML={{
       __html: `
         .integration-scroll {
+          display: flex;
+          width: max-content;
           animation: scroll 30s linear infinite;
         }
         
@@ -16,6 +18,14 @@ const IntegrationScrollStyles = () => {
           100% {
             transform: translateX(-50%);
           }
+        }
+
+        .integration-scroll-container {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+          mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
         }
       `
     }} />
