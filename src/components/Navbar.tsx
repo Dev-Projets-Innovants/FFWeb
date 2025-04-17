@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail, Menu, Puzzle, X } from "lucide-react";
@@ -98,8 +99,8 @@ const Navbar = () => {
                   <Menu className={`h-6 w-6 ${scrolled ? 'text-black' : 'text-white'}`} />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[80%] sm:w-[350px]">
-                <div className="py-8">
+              <SheetContent side="left" className="w-[80%] sm:w-[350px] flex flex-col">
+                <div className="py-8 flex-1">
                   <div className="flex justify-between items-center mb-8">
                     <span className="text-flutter-primary font-bold text-2xl">
                       FFWeb
@@ -108,6 +109,14 @@ const Navbar = () => {
                   <nav className="flex flex-col gap-1">
                     <NavLinks onClick={() => document.querySelector('[data-state="open"]')?.setAttribute('data-state', 'closed')} />
                   </nav>
+                </div>
+                
+                {/* Email address at the bottom of mobile sidebar */}
+                <div className="p-4 border-t border-gray-200">
+                  <a href="mailto:contact@ffweb.com" className="flex items-center justify-center text-flutter-primary font-medium hover:text-flutter-secondary transition-colors">
+                    <Mail className="mr-2 h-4 w-4" />
+                    contact@ffweb.com
+                  </a>
                 </div>
               </SheetContent>
             </Sheet>
