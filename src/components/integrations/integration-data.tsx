@@ -2,7 +2,8 @@
 import React from 'react';
 import { 
   Database, CalendarClock, CreditCard, FileSpreadsheet, Notebook, 
-  Zap, Search, MessageSquareCode, Shield, Mail, Package, Slack, Cloud, Key
+  Zap, Search, MessageSquareCode, Shield, Mail, Package, Slack, Cloud, Key,
+  Github, BarChart, Map, Bell, Play, Video, Coins, BrainCircuit
 } from 'lucide-react';
 import { IntegrationProps } from './IntegrationCard';
 
@@ -20,6 +21,13 @@ export const integrationsList: IntegrationProps[] = [
     description: "Backend-as-a-Service platform",
     connection: "Direct API integration with your FlutterFlow app",
     benefit: "Secure database, auth, and storage with minimal setup"
+  },
+  {
+    name: "SQLite",
+    icon: <Database className="h-10 w-10 text-primary" />,
+    description: "Local database engine",
+    connection: "Native integration within FlutterFlow",
+    benefit: "Fast, reliable local data storage for your app"
   },
   {
     name: "Firebase",
@@ -62,6 +70,27 @@ export const integrationsList: IntegrationProps[] = [
     description: "Payment processing platform",
     connection: "SDK and API integration",
     benefit: "Secure payment processing for your services"
+  },
+  {
+    name: "Braintree",
+    icon: <CreditCard className="h-10 w-10 text-primary" />,
+    description: "Payment gateway",
+    connection: "SDK and API integration",
+    benefit: "Comprehensive payment solutions with PayPal integration"
+  },
+  {
+    name: "RevenueCat",
+    icon: <Coins className="h-10 w-10 text-primary" />,
+    description: "Subscription management",
+    connection: "SDK integration",
+    benefit: "Simplify in-app subscriptions across platforms"
+  },
+  {
+    name: "Razorpay",
+    icon: <CreditCard className="h-10 w-10 text-primary" />,
+    description: "Payment gateway for India",
+    connection: "SDK and API integration",
+    benefit: "Easy payment processing for Indian markets"
   },
   {
     name: "Google Sheets",
@@ -188,5 +217,54 @@ export const integrationsList: IntegrationProps[] = [
     description: "Cloud deployment platforms",
     connection: "Various cloud provider APIs",
     benefit: "Scalable infrastructure and hosting solutions"
+  },
+  {
+    name: "GitHub",
+    icon: <Github className="h-10 w-10 text-primary" />,
+    description: "Version control platform",
+    connection: "GitHub API integration",
+    benefit: "Automate workflows and integrate with repositories"
+  },
+  {
+    name: "Google Analytics",
+    icon: <BarChart className="h-10 w-10 text-primary" />,
+    description: "Website analytics",
+    connection: "SDK and API integration",
+    benefit: "Track user behavior and app performance"
+  },
+  {
+    name: "Google Maps",
+    icon: <Map className="h-10 w-10 text-primary" />,
+    description: "Mapping service",
+    connection: "Maps SDK integration",
+    benefit: "Add interactive maps and location features"
+  },
+  {
+    name: "AdMob",
+    icon: <Play className="h-10 w-10 text-primary" />,
+    description: "Mobile advertising platform",
+    connection: "SDK integration",
+    benefit: "Monetize your app with targeted ads"
+  },
+  {
+    name: "Mux Livestream",
+    icon: <Video className="h-10 w-10 text-primary" />,
+    description: "Video streaming platform",
+    connection: "API integration",
+    benefit: "Add high-quality video streaming to your app"
+  },
+  {
+    name: "OneSignal",
+    icon: <Bell className="h-10 w-10 text-primary" />,
+    description: "Push notification service",
+    connection: "SDK and API integration",
+    benefit: "Engage users with targeted push notifications"
+  },
+  {
+    name: "Gemini",
+    icon: <BrainCircuit className="h-10 w-10 text-primary" />,
+    description: "AI model by Google",
+    connection: "API integration",
+    benefit: "Add powerful AI capabilities to your app"
   }
 ];
