@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail, Menu, Puzzle, X } from "lucide-react";
@@ -80,7 +79,6 @@ const Navbar = () => {
           </span>
         </div>
         
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <NavLinks />
         </div>
@@ -91,7 +89,6 @@ const Navbar = () => {
             Contact Us
           </Button>
           
-          {/* Mobile Navigation - Moved after Contact Us button */}
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -111,11 +108,13 @@ const Navbar = () => {
                   </nav>
                 </div>
                 
-                {/* Email address at the bottom of mobile sidebar */}
                 <div className="p-4 border-t border-gray-200">
-                  <a href="mailto:contact@ffweb.com" className="flex items-center justify-center text-flutter-primary font-medium hover:text-flutter-secondary transition-colors">
+                  <a 
+                    href="mailto:dev.projets.innovants@gmail.com" 
+                    className="flex items-center justify-center text-flutter-primary font-medium hover:text-flutter-secondary transition-colors"
+                  >
                     <Mail className="mr-2 h-4 w-4" />
-                    contact@ffweb.com
+                    dev.projets.innovants@gmail.com
                   </a>
                 </div>
               </SheetContent>
