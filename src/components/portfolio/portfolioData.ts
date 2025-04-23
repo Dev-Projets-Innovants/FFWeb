@@ -1,3 +1,4 @@
+
 export interface PortfolioItemData {
   title: string;
   category: string;
@@ -23,7 +24,7 @@ export const portfolioItems: PortfolioItemData[] = [
   },
   {
     title: "ExpertConnect",
-    category: "consultancy",
+    category: "landing-page", // Updated category
     imageUrl: "lovable-uploads/7a438d7e-ea84-4425-98d1-c3bd560a8efc.png",
     projectUrl: "https://expert-connect-your-consulting-landing-page-84xeiv.flutterflow.app/",
     showDetails: true
