@@ -58,6 +58,45 @@ const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialo
       "Digital Document Storage",
       "Identity Verification"
     ];
+  } else if (title === "African Health Organization") {
+    features = [
+      "Patient Management System",
+      "Telemedicine Integration",
+      "Medical Records Database",
+      "Appointment Scheduling",
+      "Prescription Management",
+      "Health Analytics Dashboard",
+      "Emergency Response System",
+      "Medical Inventory Management",
+      "Healthcare Provider Network",
+      "Patient Portal Access"
+    ];
+
+    technologies = [
+      "React.js for frontend",
+      "Node.js and Express backend",
+      "MongoDB for patient records",
+      "WebRTC for telemedicine",
+      "AWS for cloud infrastructure",
+      "Socket.io for real-time updates",
+      "Redux for state management",
+      "TailwindCSS for styling",
+      "Jest for testing",
+      "Docker deployment"
+    ];
+
+    services = [
+      "Online Consultations",
+      "Medical Record Management",
+      "Emergency Services",
+      "Healthcare Analytics",
+      "Prescription Services",
+      "Provider Network Access",
+      "Patient Education Portal",
+      "Inventory Management",
+      "Appointment Management",
+      "Health Monitoring"
+    ];
   } else if (title === "Administrative Dashboard") {
     features = [
       "User management and role-based access control",
