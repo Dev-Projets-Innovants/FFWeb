@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ProjectDetailsDialog from '../ProjectDetailsDialog';
+import { Badge } from '@/components/ui/badge';
 
 export interface PortfolioItemProps {
   title: string;
@@ -26,12 +27,29 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
     setImageLoadError(true);
   };
 
+  const isAlreadyOwned = title === "ExpertConnect";
+
   return (
     <>
       <div 
         className="group relative overflow-hidden rounded-xl transform transition-all duration-500 opacity-0"
         data-animate="true"
       >
+        <div className="absolute top-4 right-4 z-10">
+          <Badge 
+            variant={isAlreadyOwned ? "destructive" : "default"}
+            className={`
+              flex items-center gap-1 px-3 py-1 
+              ${isAlreadyOwned 
+                ? 'bg-destructive text-destructive-foreground' 
+                : 'bg-[#4CAF50] text-white'}
+            `}
+          >
+            <Tag className="h-3.5 w-3.5" />
+            {isAlreadyOwned ? "Already Owned" : "Available for Sale"}
+          </Badge>
+        </div>
+        
         <div className="aspect-video w-full overflow-hidden">
           {!imageLoadError ? (
             <img 
