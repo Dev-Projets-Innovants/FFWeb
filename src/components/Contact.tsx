@@ -48,7 +48,7 @@ const Contact = () => {
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
             <Mail className="h-10 w-10 text-flutter-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Email Me</h3>
-            <p className="opacity-80 mb-4">Ready to discuss your project? Drop us a line!</p>
+            <p className="opacity-80 mb-4">Ready to discuss your project?</p>
             <a 
               href="mailto:dev.projets.innovants@gmail.com" 
               className="inline-block"
