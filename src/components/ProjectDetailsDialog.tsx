@@ -136,6 +136,45 @@ const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialo
       "API Integration",
       "File Management"
     ];
+  } else if (title === "ExpertConnect") {
+    features = [
+      "Expert consultant matching system",
+      "Advanced search and filtering",
+      "Real-time availability calendar",
+      "Secure messaging platform",
+      "Video consultation integration",
+      "Client portfolio management",
+      "Consultant profiles and ratings",
+      "Booking management system",
+      "Payment processing integration",
+      "Analytics dashboard"
+    ];
+
+    technologies = [
+      "React.js for frontend",
+      "Node.js backend",
+      "MongoDB database",
+      "WebRTC for video calls",
+      "Stripe payment integration",
+      "Redux for state management",
+      "TailwindCSS for styling",
+      "JWT authentication",
+      "Socket.io for real-time features",
+      "AWS hosting infrastructure"
+    ];
+
+    services = [
+      "Expert Consultant Matching",
+      "Business Strategy Consulting",
+      "Operational Improvement",
+      "Market Analysis",
+      "Financial Advisory",
+      "Technology Consulting",
+      "Project Management",
+      "Risk Assessment",
+      "Performance Optimization",
+      "Industry Research"
+    ];
   }
 
   if (features.length === 0) return null;
