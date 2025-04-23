@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ExternalLink, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -47,7 +46,7 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
             `}
           >
             <Tag className="h-3.5 w-3.5" />
-            {isExpertConnect ? "Available for Sale" : "Not Available"}
+            {isExpertConnect ? "Available for Sale" : "Already Owned"}
           </Badge>
         </div>
         
@@ -98,4 +97,3 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
 };
 
 export default PortfolioItem;
-
