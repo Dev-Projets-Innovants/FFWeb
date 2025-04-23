@@ -1,22 +1,16 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 const Hero = () => {
   const isMobile = useIsMobile();
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
 
   // Refs for animated elements
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Stagger animations for a more dynamic entrance
     if (titleRef.current) {
@@ -33,6 +27,7 @@ const Hero = () => {
       }
     }, 400);
   }, []);
+
   return <div className="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center py-12 md:py-16 px-4" style={{
     backgroundImage: "url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80')",
     backgroundPosition: "center",
@@ -55,14 +50,13 @@ const Hero = () => {
         </p>
         
         <div ref={ctaRef} className="opacity-0 flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
-          <Button className="bg-flutter-primary hover:bg-flutter-secondary text-white text-sm md:text-base px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto" onClick={scrollToContact} size="lg">
-            <Mail className="mr-2 h-4 w-4" />
-            Get Started
-          </Button>
-          
-          <Button variant="outline" onClick={() => document.getElementById('portfolio')?.scrollIntoView({
-          behavior: 'smooth'
-        })} size="lg" className="border-white hover:bg-white/20 text-sm md:text-base px-6 md:px-8 py-5 md:py-6 mt-3 sm:mt-0 w-full sm:w-auto text-zinc-950">
+          <Button 
+            onClick={() => document.getElementById('portfolio')?.scrollIntoView({
+              behavior: 'smooth'
+            })} 
+            size="lg" 
+            className="border-white hover:bg-white/20 text-sm md:text-base px-6 md:px-8 py-5 md:py-6 mt-3 sm:mt-0 w-full sm:w-auto text-zinc-950"
+          >
             Explore Projects
           </Button>
         </div>
@@ -70,3 +64,4 @@ const Hero = () => {
     </div>;
 };
 export default Hero;
+
