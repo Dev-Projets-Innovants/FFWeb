@@ -27,7 +27,8 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
     setImageLoadError(true);
   };
 
-  const isAlreadyOwned = title === "ExpertConnect";
+  const isExpertConnect = title === "ExpertConnect";
+  const isAvailableForSale = !["Visa and Passport Management System", "African Health Organization"].includes(title);
 
   return (
     <>
@@ -37,16 +38,16 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
       >
         <div className="absolute top-4 right-4 z-10">
           <Badge 
-            variant={isAlreadyOwned ? "destructive" : "default"}
+            variant={isExpertConnect ? "default" : "destructive"}
             className={`
               flex items-center gap-1 px-3 py-1 
-              ${isAlreadyOwned 
-                ? 'bg-destructive text-destructive-foreground' 
-                : 'bg-[#4CAF50] text-white'}
+              ${isExpertConnect 
+                ? 'bg-[#4CAF50] text-white' 
+                : 'bg-destructive text-destructive-foreground'}
             `}
           >
             <Tag className="h-3.5 w-3.5" />
-            {isAlreadyOwned ? "Already Owned" : "Available for Sale"}
+            {isExpertConnect ? "Available for Sale" : "Not Available"}
           </Badge>
         </div>
         
@@ -97,3 +98,4 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
 };
 
 export default PortfolioItem;
+
