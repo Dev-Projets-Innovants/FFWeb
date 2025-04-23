@@ -17,6 +17,9 @@ const PortfolioFilters = ({ currentFilter, onFilterChange }: PortfolioFiltersPro
     { id: 'landing-page', label: 'Landing Page' },
   ];
 
+  // Add logging to see what's happening with filters
+  console.log('Current filter in filters component:', currentFilter);
+
   return (
     <div className="flex flex-wrap justify-center mb-10 gap-2">
       {filters.map(filter => (
@@ -24,7 +27,10 @@ const PortfolioFilters = ({ currentFilter, onFilterChange }: PortfolioFiltersPro
           key={filter.id}
           variant={currentFilter === filter.id ? 'default' : 'outline'}
           className={currentFilter === filter.id ? 'bg-flutter-primary hover:bg-flutter-secondary' : ''}
-          onClick={() => onFilterChange(filter.id)}
+          onClick={() => {
+            console.log('Clicked on filter:', filter.id);
+            onFilterChange(filter.id);
+          }}
         >
           {filter.label}
         </Button>

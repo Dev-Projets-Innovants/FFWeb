@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,7 +18,8 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
 
   useEffect(() => {
     console.log(`Image URL for ${title}:`, imageUrl);
-  }, [imageUrl, title]);
+    console.log(`Category for ${title}:`, category);
+  }, [imageUrl, title, category]);
 
   const handleImageError = () => {
     console.error(`Failed to load image for ${title}:`, imageUrl);

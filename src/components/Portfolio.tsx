@@ -24,9 +24,16 @@ const Portfolio = () => {
     };
   }, []);
 
+  // Log the current filter and items to help debug
+  console.log('Current filter:', filter);
+  console.log('All items:', portfolioItems);
+  
   const filteredItems = filter === 'all' 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === filter);
+  
+  // Log the filtered items to check what's being returned
+  console.log('Filtered items:', filteredItems);
 
   return (
     <section id="portfolio" className="py-20 px-4 bg-white">
