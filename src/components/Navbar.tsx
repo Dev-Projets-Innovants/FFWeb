@@ -86,7 +86,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <Button className="bg-flutter-primary hover:bg-flutter-secondary" onClick={() => scrollToSection('contact')}>
             <Mail className="mr-2 h-4 w-4" />
-            Contact Us
+            Let's talk 😊
           </Button>
           
           <div className="md:hidden">
