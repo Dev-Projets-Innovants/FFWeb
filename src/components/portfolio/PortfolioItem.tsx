@@ -46,21 +46,21 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
             </div>
           )}
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-          <h3 className="text-white text-xl font-semibold">{title}</h3>
-          <p className="text-white/80 mb-4">{category}</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/75 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+          <h3 className="text-white text-xl font-semibold drop-shadow-lg">{title}</h3>
+          <p className="text-white/90 mb-4 drop-shadow-md">{category}</p>
           <div className="flex gap-2">
             {showDetails && (
               <Button 
                 variant="outline" 
-                className="text-white border-white hover:bg-white hover:text-flutter-dark"
+                className="text-white border-white/80 backdrop-blur-sm bg-black/20 hover:bg-white hover:text-flutter-dark"
                 onClick={() => setIsDialogOpen(true)}
               >
                 View Details
               </Button>
             )}
             <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-flutter-dark">
+              <Button variant="outline" className="text-white border-white/80 backdrop-blur-sm bg-black/20 hover:bg-white hover:text-flutter-dark">
                 View Project <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
             </a>
