@@ -17,19 +17,15 @@ export const getProjectDetails = (title: string): ProjectDetails => {
         "Application status tracking dashboard",
         "Administrative appointment management",
         "Website content management system",
-        "Automated notification system"
+        "Automated notification system",
+        "Local appointment backup system (Mysql)"
       ],
       integrations: [
         "Supabase for Backend as a Service",
         "MySQL database integration",
-        "Local appointment backup system",
         "Resend email service integration",
         "Carbone.io PDF generation",
-        "EasyAppointment API integration",
-        "Document storage system",
-        "Authentication service",
-        "Backup management system",
-        "Content management system"
+        "EasyAppointment API integration"
       ],
       tags: ["Website", "Web App", "Admin Panel"]
     };
