@@ -1,4 +1,3 @@
-
 interface ProjectDetails {
   features: string[];
   integrations: string[];
@@ -9,30 +8,30 @@ export const getProjectDetails = (title: string): ProjectDetails => {
   if (title === "Visa and Passport Management System") {
     return {
       features: [
-        "Online appointment scheduling for passport and visa services",
-        "Real-time availability tracking",
-        "Document upload and verification system",
-        "Automated email notifications",
-        "User dashboard for application status tracking",
-        "Admin panel for managing appointments and applications",
-        "Digital form submission and processing",
-        "Multiple authentication levels",
-        "Secure payment integration",
-        "Document validation and verification"
+        "Online passport and visa application submission",
+        "Real-time appointment scheduling system",
+        "Digital document upload and verification",
+        "Passport information and requirements guide",
+        "Schedule availability checking",
+        "User-friendly appointment booking interface",
+        "Application status tracking dashboard",
+        "Administrative appointment management",
+        "Website content management system",
+        "Automated notification system"
       ],
       integrations: [
-        "Payment gateway for secure transactions",
-        "Email service for notifications",
-        "Cloud storage for documents",
+        "Supabase for Backend as a Service",
+        "MySQL database integration",
+        "Local appointment backup system",
+        "Resend email service integration",
+        "Carbone.io PDF generation",
+        "EasyAppointment API integration",
+        "Document storage system",
         "Authentication service",
-        "SMS gateway for alerts",
-        "Document verification API",
-        "Calendar service for appointments",
-        "Analytics platform",
-        "Customer support ticketing system",
-        "Automated ID verification service"
+        "Backup management system",
+        "Content management system"
       ],
-      tags: ["Website", "Web App"]
+      tags: ["Website", "Web App", "Admin Panel"]
     };
   } else if (title === "African Health Organization") {
     return {
