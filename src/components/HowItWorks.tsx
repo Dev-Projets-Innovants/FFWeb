@@ -88,14 +88,6 @@ const HowItWorks = () => {
             description="Deploy your website in record time and start attracting visitors with your new high-performance online presence."
             delay={500}
           />
-          <ProcessStep 
-  icon={<Code className="h-10 w-10" />}
-  step="4"
-  title="Receive Full Source Code"
-  description="At the end of development, get access to the complete source code of your project for full transparency and future scalability."
-  delay={600}
-/>
-
         </div>
       </div>
     </section>
