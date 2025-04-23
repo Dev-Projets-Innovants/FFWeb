@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ProjectDetailsDialog from '../ProjectDetailsDialog';
@@ -14,6 +13,16 @@ export interface PortfolioItemProps {
 
 const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: PortfolioItemProps) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [imageLoadError, setImageLoadError] = useState(false);
+
+  useEffect(() => {
+    console.log(`Image URL for ${title}:`, imageUrl);
+  }, [imageUrl, title]);
+
+  const handleImageError = () => {
+    console.error(`Failed to load image for ${title}:`, imageUrl);
+    setImageLoadError(true);
+  };
 
   return (
     <>
@@ -22,11 +31,18 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
         data-animate="true"
       >
         <div className="aspect-video w-full overflow-hidden">
-          <img 
-            src={imageUrl} 
-            alt={title} 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-          />
+          {!imageLoadError ? (
+            <img 
+              src={imageUrl} 
+              alt={title} 
+              onError={handleImageError}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500">
+              Image Not Available
+            </div>
+          )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
           <h3 className="text-white text-xl font-semibold">{title}</h3>
@@ -61,4 +77,3 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
 };
 
 export default PortfolioItem;
-

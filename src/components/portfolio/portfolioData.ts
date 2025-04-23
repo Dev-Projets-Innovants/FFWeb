@@ -1,4 +1,3 @@
-
 export interface PortfolioItemData {
   title: string;
   category: string;
@@ -29,7 +28,7 @@ export const portfolioItems: PortfolioItemData[] = [
   {
     title: "Visa and Passport Management System",
     category: "administrative",
-    imageUrl: "/lovable-uploads/4535e058-acc9-488b-91b0-f685927c823e.png",
+    imageUrl: "/lovable-uploads/4535e058-acc9-488b-91b0-f685927c823e.png", // Using the original path
     projectUrl: "https://ae.dgdifrance.fr/",
     showDetails: true
   },
@@ -53,4 +52,3 @@ export const portfolioItems: PortfolioItemData[] = [
     projectUrl: "https://flutterflow.io"
   }
 ];
-
