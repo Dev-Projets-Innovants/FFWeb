@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -107,7 +106,7 @@ const Portfolio = () => {
     {
       title: "Visa and Passport Management System",
       category: "administrative",
-      imageUrl: "/lovable-uploads/f7c4d4bb-ddf5-4559-98eb-eef70f0528d7.png",
+      imageUrl: "/lovable-uploads/4535e058-acc9-488b-91b0-f685927c823e.png",
       projectUrl: "https://ae.dgdifrance.fr/",
       delay: 350,
       showDetails: true
