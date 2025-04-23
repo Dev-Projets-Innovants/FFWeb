@@ -69,7 +69,7 @@ const HowItWorks = () => {
             icon={<MessageSquare className="h-10 w-10" />}
             step="1"
             title="Share Your Vision"
-            description="We start with understanding your goals, audience, and requirements to craft the perfect website strategy."
+            description="I start with understanding your goals, audience, and requirements to craft the perfect website strategy."
             delay={100}
           />
           
@@ -77,7 +77,7 @@ const HowItWorks = () => {
             icon={<Code2 className="h-10 w-10" />}
             step="2"
             title="Design & Development"
-            description="Our team creates a tailored FlutterFlow solution with your branding, content, and functionality built in."
+            description="From here, i start reflecting and building a scalable solution with your branding, content, and functionalities"
             delay={300}
           />
           
