@@ -27,7 +27,7 @@ export const getProjectDetails = (title: string): ProjectDetails => {
         "Carbone.io PDF generation",
         "EasyAppointment API integration"
       ],
-      tags: ["Website", "Web App", "Admin Panel"]
+      tags: ["Website", "Web App"]
     };
   } else if (title === "African Health Organization") {
     return {
