@@ -31,17 +31,23 @@ const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialo
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <div className="flex items-center justify-between">
-            <DialogTitle className="text-2xl font-bold text-flutter-dark">
+          <div className="flex items-center justify-between w-full">
+            <DialogTitle className="text-2xl font-bold text-flutter-dark flex-grow">
               {title}
             </DialogTitle>
             {isAvailableForSale && (
-              <a href={marketplaceUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="default" className="bg-[#4CAF50] hover:bg-[#45a049] text-white">
-                  View in Marketplace
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
+              <div className="ml-4">
+                <a href={marketplaceUrl} target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    variant="default" 
+                    className="bg-[#4CAF50] hover:bg-[#45a049] text-white"
+                    size="sm"
+                  >
+                    View in Marketplace
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              </div>
             )}
           </div>
         </DialogHeader>
@@ -71,3 +77,4 @@ const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialo
 };
 
 export default ProjectDetailsDialog;
+
