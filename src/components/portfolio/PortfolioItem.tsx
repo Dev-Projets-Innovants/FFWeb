@@ -1,0 +1,65 @@
+
+import React, { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import ProjectDetailsDialog from '../ProjectDetailsDialog';
+
+export interface PortfolioItemProps {
+  title: string;
+  category: string;
+  imageUrl: string;
+  projectUrl: string;
+  delay: number;
+  showDetails?: boolean;
+}
+
+const PortfolioItem = ({ title, category, imageUrl, projectUrl, delay, showDetails }: PortfolioItemProps) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  return (
+    <>
+      <div 
+        className="group relative overflow-hidden rounded-xl opacity-0"
+        style={{ animationDelay: `${delay}ms` }}
+        data-animate="true"
+      >
+        <div className="aspect-video w-full overflow-hidden">
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+          <h3 className="text-white text-xl font-semibold">{title}</h3>
+          <p className="text-white/80 mb-4">{category}</p>
+          <div className="flex gap-2">
+            {showDetails && (
+              <Button 
+                variant="outline" 
+                className="text-white border-white hover:bg-white hover:text-flutter-dark"
+                onClick={() => setIsDialogOpen(true)}
+              >
+                View Details
+              </Button>
+            )}
+            <a href={projectUrl} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-flutter-dark">
+                View Project <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </div>
+      {showDetails && (
+        <ProjectDetailsDialog 
+          open={isDialogOpen} 
+          onOpenChange={setIsDialogOpen}
+          title={title}
+        />
+      )}
+    </>
+  );
+};
+
+export default PortfolioItem;
