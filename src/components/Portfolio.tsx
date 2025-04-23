@@ -1,11 +1,11 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PortfolioItem from './portfolio/PortfolioItem';
 import PortfolioFilters from './portfolio/PortfolioFilters';
 import { portfolioItems } from './portfolio/portfolioData';
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = React.useState('all');
   
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -45,14 +45,20 @@ const Portfolio = () => {
           onFilterChange={setFilter}
         />
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item, index) => (
-            <PortfolioItem
-              key={index}
-              {...item}
-            />
-          ))}
-        </div>
+        {filteredItems.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredItems.map((item, index) => (
+              <PortfolioItem
+                key={index}
+                {...item}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-8">
+            <p className="text-gray-500">No projects available in this category.</p>
+          </div>
+        )}
       </div>
     </section>
   );
