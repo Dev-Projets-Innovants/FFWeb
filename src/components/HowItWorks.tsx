@@ -57,7 +57,7 @@ const HowItWorks = () => {
         </h2>
         
         <p className="section-subheading text-center">
-          From concept to launch, our streamlined process makes building your website, landing page,
+          From concept to launch, my streamlined process makes building your website, landing page,
           or web application with FlutterFlow quick and efficient - without compromising on quality.
         </p>
         
