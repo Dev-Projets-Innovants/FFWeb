@@ -94,7 +94,7 @@ const HowItWorks = () => {
           <ProcessStep 
             icon={<Code />}
             step="4"
-            title="Full Source Code"
+            title="Ownership"
             description="Get complete source code access or project ownership for future scalability."
             delay={600}
           />
@@ -105,3 +105,4 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
+
