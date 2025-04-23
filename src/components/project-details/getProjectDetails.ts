@@ -1,7 +1,7 @@
+
 interface ProjectDetails {
   features: string[];
-  technologies: string[];
-  services: string[];
+  integrations: string[];
   tags: string[];
 }
 
@@ -20,29 +20,17 @@ export const getProjectDetails = (title: string): ProjectDetails => {
         "Secure payment integration",
         "Document validation and verification"
       ],
-      technologies: [
-        "React.js for frontend development",
-        "Node.js and Express.js backend",
-        "MongoDB for database management",
-        "JWT for authentication",
-        "Redux for state management",
-        "Tailwind CSS for styling",
-        "RESTful API architecture",
-        "AWS for cloud hosting",
-        "Socket.io for real-time updates",
-        "Docker for containerization"
-      ],
-      services: [
-        "Passport Application Processing",
-        "Visa Application Management",
-        "Document Verification",
-        "Appointment Scheduling",
-        "Status Tracking",
-        "Payment Processing",
-        "Email Notifications",
-        "Support Ticketing",
-        "Digital Document Storage",
-        "Identity Verification"
+      integrations: [
+        "Payment gateway for secure transactions",
+        "Email service for notifications",
+        "Cloud storage for documents",
+        "Authentication service",
+        "SMS gateway for alerts",
+        "Document verification API",
+        "Calendar service for appointments",
+        "Analytics platform",
+        "Customer support ticketing system",
+        "Automated ID verification service"
       ],
       tags: ["Website", "Web App"]
     };
@@ -60,29 +48,17 @@ export const getProjectDetails = (title: string): ProjectDetails => {
         "Healthcare Provider Network",
         "Patient Portal Access"
       ],
-      technologies: [
-        "React.js for frontend",
-        "Node.js and Express backend",
-        "MongoDB for patient records",
-        "WebRTC for telemedicine",
-        "AWS for cloud infrastructure",
-        "Socket.io for real-time updates",
-        "Redux for state management",
-        "TailwindCSS for styling",
-        "Jest for testing",
-        "Docker deployment"
-      ],
-      services: [
-        "Online Consultations",
-        "Medical Record Management",
-        "Emergency Services",
-        "Healthcare Analytics",
-        "Prescription Services",
-        "Provider Network Access",
-        "Patient Education Portal",
-        "Inventory Management",
-        "Appointment Management",
-        "Health Monitoring"
+      integrations: [
+        "Electronic Health Records (EHR) system",
+        "Telemedicine platform",
+        "Laboratory information system",
+        "Pharmacy management system",
+        "Medical billing service",
+        "Healthcare analytics platform",
+        "Patient scheduling system",
+        "Medical imaging service",
+        "Emergency response system",
+        "Healthcare provider directory"
       ],
       tags: ["Website"]
     };
@@ -100,29 +76,17 @@ export const getProjectDetails = (title: string): ProjectDetails => {
         "Payment processing integration",
         "Analytics dashboard"
       ],
-      technologies: [
-        "React.js for frontend",
-        "Node.js backend",
-        "MongoDB database",
-        "WebRTC for video calls",
-        "Stripe payment integration",
-        "Redux for state management",
-        "TailwindCSS for styling",
-        "JWT authentication",
-        "Socket.io for real-time features",
-        "AWS hosting infrastructure"
-      ],
-      services: [
-        "Expert Consultant Matching",
-        "Business Strategy Consulting",
-        "Operational Improvement",
-        "Market Analysis",
-        "Financial Advisory",
-        "Technology Consulting",
-        "Project Management",
-        "Risk Assessment",
-        "Performance Optimization",
-        "Industry Research"
+      integrations: [
+        "Calendar scheduling system",
+        "Video conferencing platform",
+        "Payment processing system",
+        "Email marketing service",
+        "Customer relationship management",
+        "Analytics platform",
+        "Document sharing service",
+        "Communication platform",
+        "Task management system",
+        "Rating and review system"
       ],
       tags: ["Landing Page"]
     };
@@ -130,8 +94,7 @@ export const getProjectDetails = (title: string): ProjectDetails => {
   
   return {
     features: [],
-    technologies: [],
-    services: [],
+    integrations: [],
     tags: []
   };
 };

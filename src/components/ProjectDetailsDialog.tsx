@@ -11,8 +11,7 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ProjectFeatures from './project-details/ProjectFeatures';
-import ProjectTechnologies from './project-details/ProjectTechnologies';
-import ProjectServices from './project-details/ProjectServices';
+import ProjectIntegrations from './project-details/ProjectIntegrations';
 import { getProjectDetails } from './project-details/getProjectDetails';
 
 interface ProjectDetailsDialogProps {
@@ -22,7 +21,7 @@ interface ProjectDetailsDialogProps {
 }
 
 const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialogProps) => {
-  const { features, technologies, services, tags } = getProjectDetails(title);
+  const { features, integrations, tags } = getProjectDetails(title);
   const isAvailableForSale = title === "Consulting landing page";
   const marketplaceUrl = "https://marketplace.flutterflow.io/creator/a133be95dc6a2c59a0453dc15ac8dce90080c3d8";
 
@@ -63,20 +62,15 @@ const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialo
         <Tabs defaultValue="features" className="w-full mt-6">
           <TabsList className="w-full justify-start">
             <TabsTrigger value="features">Features</TabsTrigger>
-            <TabsTrigger value="technologies">Technologies</TabsTrigger>
-            <TabsTrigger value="services">Services</TabsTrigger>
+            <TabsTrigger value="integrations">Integrations</TabsTrigger>
           </TabsList>
 
           <TabsContent value="features" className="mt-6">
             <ProjectFeatures features={features} />
           </TabsContent>
 
-          <TabsContent value="technologies" className="mt-6">
-            <ProjectTechnologies technologies={technologies} />
-          </TabsContent>
-
-          <TabsContent value="services" className="mt-6">
-            <ProjectServices services={services} />
+          <TabsContent value="integrations" className="mt-6">
+            <ProjectIntegrations integrations={integrations} />
           </TabsContent>
         </Tabs>
       </DialogContent>
