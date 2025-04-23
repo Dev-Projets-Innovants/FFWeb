@@ -136,7 +136,7 @@ const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialo
       "API Integration",
       "File Management"
     ];
-  } else if (title === "ExpertConnect") {
+  } else if (title === "Consulting landing page") {
     features = [
       "Expert consultant matching system",
       "Advanced search and filtering",

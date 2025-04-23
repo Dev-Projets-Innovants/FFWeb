@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ExternalLink, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -26,7 +27,7 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
     setImageLoadError(true);
   };
 
-  const isExpertConnect = title === "ExpertConnect";
+  const isConsultingLandingPage = title === "Consulting landing page";
   const isAvailableForSale = !["Visa and Passport Management System", "African Health Organization"].includes(title);
 
   return (
@@ -37,16 +38,16 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
       >
         <div className="absolute top-4 right-4 z-10">
           <Badge 
-            variant={isExpertConnect ? "default" : "destructive"}
+            variant={isConsultingLandingPage ? "default" : "destructive"}
             className={`
               flex items-center gap-1 px-3 py-1 
-              ${isExpertConnect 
+              ${isConsultingLandingPage 
                 ? 'bg-[#4CAF50] text-white' 
                 : 'bg-destructive text-destructive-foreground'}
             `}
           >
             <Tag className="h-3.5 w-3.5" />
-            {isExpertConnect ? "Available for Sale" : "Already Owned"}
+            {isConsultingLandingPage ? "Available for Sale" : "Already Owned"}
           </Badge>
         </div>
         
