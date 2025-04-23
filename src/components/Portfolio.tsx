@@ -1,28 +1,38 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PortfolioItem from './portfolio/PortfolioItem';
 import PortfolioFilters from './portfolio/PortfolioFilters';
 import { portfolioItems } from './portfolio/portfolioData';
 
 const Portfolio = () => {
   const [filter, setFilter] = React.useState('all');
+  const portfolioRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
+    // Set up the intersection observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
         }
       });
     }, { threshold: 0.1 });
     
-    const elements = document.querySelectorAll('[data-animate="true"]');
-    elements.forEach(el => observer.observe(el));
+    // Select all portfolio items
+    const portfolioSection = portfolioRef.current;
+    if (portfolioSection) {
+      const elements = portfolioSection.querySelectorAll('[data-animate="true"]');
+      elements.forEach(el => observer.observe(el));
+    }
     
     return () => {
-      elements.forEach(el => observer.unobserve(el));
+      if (portfolioSection) {
+        const elements = portfolioSection.querySelectorAll('[data-animate="true"]');
+        elements.forEach(el => observer.unobserve(el));
+      }
     };
-  }, []);
+  }, [filter]); // Re-run when filter changes to animate new items
 
   // Log the current filter and items to help debug
   console.log('Current filter:', filter);
@@ -45,7 +55,7 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className="py-20 px-4 bg-white">
-      <div className="container mx-auto">
+      <div className="container mx-auto" ref={portfolioRef}>
         <h2 className="section-heading text-center">
           Portfolio <span className="text-flutter-primary">Showcase</span>
         </h2>

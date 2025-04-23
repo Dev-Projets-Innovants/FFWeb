@@ -29,7 +29,7 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: P
   return (
     <>
       <div 
-        className="group relative overflow-hidden rounded-xl opacity-0"
+        className="group relative overflow-hidden rounded-xl transform transition-all duration-500 opacity-0"
         data-animate="true"
       >
         <div className="aspect-video w-full overflow-hidden">
