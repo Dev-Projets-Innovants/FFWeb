@@ -9,18 +9,16 @@ export interface PortfolioItemProps {
   category: string;
   imageUrl: string;
   projectUrl: string;
-  delay: number;
   showDetails?: boolean;
 }
 
-const PortfolioItem = ({ title, category, imageUrl, projectUrl, delay, showDetails }: PortfolioItemProps) => {
+const PortfolioItem = ({ title, category, imageUrl, projectUrl, showDetails }: PortfolioItemProps) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <>
       <div 
         className="group relative overflow-hidden rounded-xl opacity-0"
-        style={{ animationDelay: `${delay}ms` }}
         data-animate="true"
       >
         <div className="aspect-video w-full overflow-hidden">
@@ -63,3 +61,4 @@ const PortfolioItem = ({ title, category, imageUrl, projectUrl, delay, showDetai
 };
 
 export default PortfolioItem;
+
