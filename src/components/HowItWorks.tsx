@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { MessageSquare, Code2, Rocket } from 'lucide-react';
+import { MessageSquare, Code2, Rocket, Code } from 'lucide-react';
 
 interface ProcessStepProps {
   icon: React.ReactNode;
