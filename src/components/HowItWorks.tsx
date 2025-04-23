@@ -95,7 +95,7 @@ const HowItWorks = () => {
             icon={<Code />}
             step="4"
             title="Full Source Code"
-            description="Get complete source code access for future scalability."
+            description="Get complete source code access or project ownership for future scalability."
             delay={600}
           />
         </div>
