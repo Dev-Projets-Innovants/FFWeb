@@ -1,3 +1,4 @@
+
 export interface PortfolioItemData {
   title: string;
   category: string;
@@ -28,7 +29,7 @@ export const portfolioItems: PortfolioItemData[] = [
   {
     title: "Visa and Passport Management System",
     category: "administrative",
-    imageUrl: "/lovable-uploads/4535e058-acc9-488b-91b0-f685927c823e.png", // Using the original path
+    imageUrl: "lovable-uploads/4535e058-acc9-488b-91b0-f685927c823e.png", // Removed the leading slash
     projectUrl: "https://ae.dgdifrance.fr/",
     showDetails: true
   },
