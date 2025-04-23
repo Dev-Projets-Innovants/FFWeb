@@ -30,34 +30,32 @@ const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialo
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto relative">
+      <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
               <DialogTitle className="text-2xl font-bold text-flutter-dark">
                 {title}
               </DialogTitle>
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="flex gap-2">
-                {tags.map((tag, index) => (
-                  <Badge 
-                    key={index} 
-                    variant="secondary"
-                    className="bg-flutter-primary/10 text-flutter-primary hover:bg-flutter-primary/20"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
               {isAvailableForSale && (
                 <a href={marketplaceUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="default" className="bg-[#8B5CF6] hover:bg-[#7E4ED6] text-white">
+                  <Button variant="default" className="bg-[#4CAF50] hover:bg-[#45a049] text-white">
                     View in Marketplace
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
               )}
+            </div>
+            <div className="flex gap-2">
+              {tags.map((tag, index) => (
+                <Badge 
+                  key={index} 
+                  variant="secondary"
+                  className="bg-flutter-primary/10 text-flutter-primary hover:bg-flutter-primary/20"
+                >
+                  {tag}
+                </Badge>
+              ))}
             </div>
           </div>
         </DialogHeader>
