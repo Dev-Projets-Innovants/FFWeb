@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Dialog,
@@ -16,46 +15,91 @@ interface ProjectDetailsDialogProps {
 }
 
 const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialogProps) => {
-  if (title !== "Visa and Passport Management System") return null;
+  let features = [];
+  let technologies = [];
+  let services = [];
 
-  const features = [
-    "Online appointment scheduling for passport and visa services",
-    "Real-time availability tracking",
-    "Document upload and verification system",
-    "Automated email notifications",
-    "User dashboard for application status tracking",
-    "Admin panel for managing appointments and applications",
-    "Digital form submission and processing",
-    "Multiple authentication levels",
-    "Secure payment integration",
-    "Document validation and verification"
-  ];
+  if (title === "Visa and Passport Management System") {
+    features = [
+      "Online appointment scheduling for passport and visa services",
+      "Real-time availability tracking",
+      "Document upload and verification system",
+      "Automated email notifications",
+      "User dashboard for application status tracking",
+      "Admin panel for managing appointments and applications",
+      "Digital form submission and processing",
+      "Multiple authentication levels",
+      "Secure payment integration",
+      "Document validation and verification"
+    ];
 
-  const technologies = [
-    "React.js for frontend development",
-    "Node.js and Express.js backend",
-    "MongoDB for database management",
-    "JWT for authentication",
-    "Redux for state management",
-    "Tailwind CSS for styling",
-    "RESTful API architecture",
-    "AWS for cloud hosting",
-    "Socket.io for real-time updates",
-    "Docker for containerization"
-  ];
+    technologies = [
+      "React.js for frontend development",
+      "Node.js and Express.js backend",
+      "MongoDB for database management",
+      "JWT for authentication",
+      "Redux for state management",
+      "Tailwind CSS for styling",
+      "RESTful API architecture",
+      "AWS for cloud hosting",
+      "Socket.io for real-time updates",
+      "Docker for containerization"
+    ];
 
-  const services = [
-    "Passport Application Processing",
-    "Visa Application Management",
-    "Document Verification",
-    "Appointment Scheduling",
-    "Status Tracking",
-    "Payment Processing",
-    "Email Notifications",
-    "Support Ticketing",
-    "Digital Document Storage",
-    "Identity Verification"
-  ];
+    services = [
+      "Passport Application Processing",
+      "Visa Application Management",
+      "Document Verification",
+      "Appointment Scheduling",
+      "Status Tracking",
+      "Payment Processing",
+      "Email Notifications",
+      "Support Ticketing",
+      "Digital Document Storage",
+      "Identity Verification"
+    ];
+  } else if (title === "Administrative Dashboard") {
+    features = [
+      "User management and role-based access control",
+      "Real-time data visualization and analytics",
+      "Comprehensive reporting tools",
+      "Task management and workflow automation",
+      "Resource allocation and tracking",
+      "System health monitoring",
+      "Notification and alert system",
+      "Activity logs and audit trails",
+      "Data import/export functionality",
+      "Custom dashboard configuration"
+    ];
+
+    technologies = [
+      "React.js for frontend development",
+      "TypeScript for type safety",
+      "Node.js backend with Express",
+      "PostgreSQL database",
+      "Chart.js for data visualization",
+      "Material UI component library",
+      "Redux for state management",
+      "Axios for API requests",
+      "Jest for testing",
+      "CI/CD pipeline integration"
+    ];
+
+    services = [
+      "User Administration",
+      "Analytics Dashboard",
+      "Report Generation",
+      "Workflow Management",
+      "System Configuration",
+      "Performance Monitoring",
+      "Data Management",
+      "Authentication Services",
+      "API Integration",
+      "File Management"
+    ];
+  }
+
+  if (features.length === 0) return null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

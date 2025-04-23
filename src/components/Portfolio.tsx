@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -102,6 +103,14 @@ const Portfolio = () => {
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       projectUrl: "https://flutterflow.io",
       delay: 300
+    },
+    {
+      title: "Visa and Passport Management System",
+      category: "administrative",
+      imageUrl: "/lovable-uploads/f7c4d4bb-ddf5-4559-98eb-eef70f0528d7.png",
+      projectUrl: "https://ae.dgdifrance.fr/",
+      delay: 350,
+      showDetails: true
     },
     {
       title: "Administrative Dashboard",
