@@ -7,6 +7,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import ProjectFeatures from './project-details/ProjectFeatures';
 import ProjectTechnologies from './project-details/ProjectTechnologies';
 import ProjectServices from './project-details/ProjectServices';
@@ -20,6 +22,8 @@ interface ProjectDetailsDialogProps {
 
 const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialogProps) => {
   const { features, technologies, services } = getProjectDetails(title);
+  const isAvailableForSale = title === "Consulting landing page";
+  const marketplaceUrl = "https://marketplace.flutterflow.io/creator/a133be95dc6a2c59a0453dc15ac8dce90080c3d8";
 
   if (features.length === 0) return null;
 
@@ -27,9 +31,19 @@ const ProjectDetailsDialog = ({ open, onOpenChange, title }: ProjectDetailsDialo
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-flutter-dark">
-            {title}
-          </DialogTitle>
+          <div className="flex items-center justify-between">
+            <DialogTitle className="text-2xl font-bold text-flutter-dark">
+              {title}
+            </DialogTitle>
+            {isAvailableForSale && (
+              <a href={marketplaceUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="default" className="bg-[#4CAF50] hover:bg-[#45a049] text-white">
+                  View in Marketplace
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+            )}
+          </div>
         </DialogHeader>
 
         <Tabs defaultValue="features" className="w-full mt-6">
