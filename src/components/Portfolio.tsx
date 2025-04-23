@@ -28,9 +28,17 @@ const Portfolio = () => {
   console.log('Current filter:', filter);
   console.log('All items:', portfolioItems);
   
+  // Check if portfolioItems is defined and not empty
+  if (!portfolioItems || portfolioItems.length === 0) {
+    console.warn('Portfolio items array is empty or undefined');
+  }
+  
   const filteredItems = filter === 'all' 
     ? portfolioItems 
-    : portfolioItems.filter(item => item.category === filter);
+    : portfolioItems.filter(item => {
+        console.log(`Comparing item category "${item.category}" with filter "${filter}"`);
+        return item.category === filter;
+      });
   
   // Log the filtered items to check what's being returned
   console.log('Filtered items:', filteredItems);
@@ -52,7 +60,7 @@ const Portfolio = () => {
           onFilterChange={setFilter}
         />
         
-        {filteredItems.length > 0 ? (
+        {filteredItems && filteredItems.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item, index) => (
               <PortfolioItem
