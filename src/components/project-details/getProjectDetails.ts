@@ -1,8 +1,8 @@
-
 interface ProjectDetails {
   features: string[];
   technologies: string[];
   services: string[];
+  tags: string[];
 }
 
 export const getProjectDetails = (title: string): ProjectDetails => {
@@ -43,7 +43,8 @@ export const getProjectDetails = (title: string): ProjectDetails => {
         "Support Ticketing",
         "Digital Document Storage",
         "Identity Verification"
-      ]
+      ],
+      tags: ["Website", "Web App"]
     };
   } else if (title === "African Health Organization") {
     return {
@@ -82,7 +83,8 @@ export const getProjectDetails = (title: string): ProjectDetails => {
         "Inventory Management",
         "Appointment Management",
         "Health Monitoring"
-      ]
+      ],
+      tags: ["Website"]
     };
   } else if (title === "Consulting landing page") {
     return {
@@ -121,13 +123,15 @@ export const getProjectDetails = (title: string): ProjectDetails => {
         "Risk Assessment",
         "Performance Optimization",
         "Industry Research"
-      ]
+      ],
+      tags: ["Landing Page"]
     };
   }
   
   return {
     features: [],
     technologies: [],
-    services: []
+    services: [],
+    tags: []
   };
 };
