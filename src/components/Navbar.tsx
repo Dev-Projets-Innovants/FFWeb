@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Mail, Menu, Puzzle, X } from "lucide-react";
+import { Mail, Menu, Puzzle, ArrowUpRight } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -90,10 +89,12 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <Button className="bg-flutter-primary hover:bg-flutter-secondary rounded-full" 
-                 onClick={() => scrollToSection('contact')}>
+          <Button 
+            className="bg-flutter-primary hover:bg-flutter-secondary rounded-lg" 
+            onClick={() => scrollToSection('contact')}
+          >
             <Mail className="mr-2 h-4 w-4" />
-            Let's talk 😊
+            Let's talk <ArrowUpRight className="ml-1 h-4 w-4" />
           </Button>
           
           <div className="md:hidden">
