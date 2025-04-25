@@ -71,13 +71,13 @@ const Navbar = () => {
   );
 
   return (
-    <nav className={`fixed w-[96%] left-1/2 -translate-x-1/2 top-4 z-50 transition-all duration-300 rounded-xl 
+    <nav className={`fixed w-full left-1/2 -translate-x-1/2 top-4 z-50 transition-all duration-300 
       ${scrolled 
         ? 'py-2 bg-white shadow-lg shadow-black/[0.03] backdrop-blur-md' 
         : 'py-3 bg-black/20 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-6">
+      <div className="container mx-auto max-w-6xl px-4 flex items-center justify-between">
         <div className="flex items-center">
           <span className="text-flutter-primary font-bold text-2xl">
             FF<span className={`${scrolled ? 'text-zinc-950' : 'text-white'}`}>Web</span>
