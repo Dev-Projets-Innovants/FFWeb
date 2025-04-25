@@ -90,7 +90,7 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-4">
           <Button 
-            className="bg-flutter-primary hover:bg-flutter-secondary rounded-lg" 
+            className="bg-flutter-primary hover:bg-flutter-secondary rounded-md" 
             onClick={() => scrollToSection('contact')}
           >
             <Mail className="mr-2 h-4 w-4" />
