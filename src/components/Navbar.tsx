@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail, Menu, Puzzle, X } from "lucide-react";
@@ -71,7 +72,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className={`fixed w-[96%] left-1/2 -translate-x-1/2 top-4 z-50 transition-all duration-300 rounded-full 
+    <nav className={`fixed w-[96%] left-1/2 -translate-x-1/2 top-4 z-50 transition-all duration-300 rounded-xl 
       ${scrolled 
         ? 'py-2 bg-white shadow-lg shadow-black/[0.03] backdrop-blur-md' 
         : 'py-3 bg-black/20 backdrop-blur-sm'
