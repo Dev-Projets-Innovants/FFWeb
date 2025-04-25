@@ -71,8 +71,13 @@ const Navbar = () => {
   );
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-white/80 backdrop-blur-md shadow-sm' : 'py-4 bg-black/20 backdrop-blur-sm'}`}>
-      <div className="container mx-auto flex items-center justify-between px-4">
+    <nav className={`fixed w-[96%] left-1/2 -translate-x-1/2 top-4 z-50 transition-all duration-300 rounded-full 
+      ${scrolled 
+        ? 'py-2 bg-white shadow-lg shadow-black/[0.03] backdrop-blur-md' 
+        : 'py-3 bg-black/20 backdrop-blur-sm'
+      }`}
+    >
+      <div className="container mx-auto flex items-center justify-between px-6">
         <div className="flex items-center">
           <span className="text-flutter-primary font-bold text-2xl">
             FF<span className={`${scrolled ? 'text-zinc-950' : 'text-white'}`}>Web</span>
@@ -84,7 +89,8 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <Button className="bg-flutter-primary hover:bg-flutter-secondary" onClick={() => scrollToSection('contact')}>
+          <Button className="bg-flutter-primary hover:bg-flutter-secondary rounded-full" 
+                 onClick={() => scrollToSection('contact')}>
             <Mail className="mr-2 h-4 w-4" />
             Let's talk 😊
           </Button>
