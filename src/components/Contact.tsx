@@ -1,11 +1,13 @@
 
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, ExternalLink } from 'lucide-react';
+import { Mail, ExternalLink, Copy, Check } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import { useState } from 'react';
 
 const Contact = () => {
   const { toast } = useToast();
+  const [copied, setCopied] = useState(false);
   
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -28,10 +30,15 @@ const Contact = () => {
   
   const handleEmailClick = () => {
     navigator.clipboard.writeText("dev.projets.innovants@gmail.com");
+    setCopied(true);
     toast({
       title: "Email copied to clipboard",
       description: "You can now paste it into your email client."
     });
+    
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   };
   
   return <section id="contact" className="py-20 px-4 bg-flutter-dark text-white">
@@ -49,17 +56,18 @@ const Contact = () => {
             <Mail className="h-10 w-10 text-flutter-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Email Me</h3>
             <p className="opacity-80 mb-4">Ready to discuss your project?</p>
-            <a 
-              href="mailto:dev.projets.innovants@gmail.com" 
-              className="inline-block"
+            <Button 
+              onClick={handleEmailClick}
+              variant="outline" 
+              className="border-flutter-primary text-flutter-primary hover:bg-flutter-primary hover:text-white"
             >
-              <Button 
-                variant="outline" 
-                className="border-flutter-primary text-flutter-primary hover:bg-flutter-primary hover:text-white"
-              >
-                dev.projets.innovants@gmail.com
-              </Button>
-            </a>
+              dev.projets.innovants@gmail.com
+              {!copied ? (
+                <Copy className="ml-2 h-4 w-4" />
+              ) : (
+                <Check className="ml-2 h-4 w-4" />
+              )}
+            </Button>
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
