@@ -45,10 +45,6 @@ const Integrations = () => {
           <h3 className="text-2xl font-bold text-center mb-8">
             Why I Use FlutterFlow for your Website, Web App, and Landing Page ?
           </h3>
-          <p className="text-center text-muted-foreground mb-12">
-            FlutterFlow enables robust application lifecycle management through multiple environments, allowing you to develop, test, and deploy with confidence. What makes FlutterFlow more efficient for your projects is its visual development approach combined with powerful custom flutter code/Action/functions for more complex functionalities.
-          </p>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all text-center">
               <div className="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
