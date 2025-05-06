@@ -35,6 +35,10 @@ const FAQ = () => {
       answer: "The timeframe depends on the complexity of your project. Simple landing pages can be completed in as little as 1-2 weeks, while more complex websites and web applications with custom features typically take 3-6 weeks. I'll provide you with a specific timeline after understanding your requirements."
     },
     {
+      question: "What makes FlutterFlow more efficient for your projects?",
+      answer: "Flutterflow's visual development approach combined with powerful custom flutter code/Actions/functions for more complex functionalities."
+    },
+    {
       question: "Can I update the content of my website or web application myself after it's built?",
       answer: "Absolutely! I can set up a content management system that allows you to easily update text, images, and other content without needing technical skills. For more complex changes, I offer maintenance packages to ensure your website or web application stays up-to-date."
     },
