@@ -43,10 +43,10 @@ const Integrations = () => {
 
         <div className="max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold text-center mb-8">
-            Seamless Platform Connectivity
+            Development Environments in FlutterFlow
           </h3>
           <p className="text-center text-muted-foreground mb-12">
-            FlutterFlow web apps and websites can connect to external platforms and applications, sharing resources and data for a unified experience.
+            FlutterFlow enables robust application lifecycle management through multiple environments, allowing you to develop, test, and deploy with confidence.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -54,25 +54,43 @@ const Integrations = () => {
               <div className="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
                 <LayoutDashboard className="h-8 w-8 text-primary" />
               </div>
-              <h4 className="font-semibold mb-2">FlutterFlow Client App</h4>
-              <p className="text-sm text-muted-foreground">Beautiful, responsive client-facing applications</p>
+              <h4 className="font-semibold mb-2">Development Environment</h4>
+              <p className="text-sm text-muted-foreground">Safe space for building and testing new features without affecting production users</p>
             </div>
 
             <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all text-center">
               <div className="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
                 <Database className="h-8 w-8 text-primary" />
               </div>
-              <h4 className="font-semibold mb-2">Supabase Backend</h4>
-              <p className="text-sm text-muted-foreground">Secure database and authentication services</p>
+              <h4 className="font-semibold mb-2">Environment-Specific Config</h4>
+              <p className="text-sm text-muted-foreground">Each environment can have its own database and environment variables</p>
             </div>
 
             <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all text-center">
               <div className="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
                 <Code className="h-8 w-8 text-primary" />
               </div>
-              <h4 className="font-semibold mb-2">Custom Admin Panel</h4>
-              <p className="text-sm text-muted-foreground">Powerful admin interfaces with React or Vue.js</p>
+              <h4 className="font-semibold mb-2">Custom Workflows</h4>
+              <p className="text-sm text-muted-foreground">Create environments tailored to your team's specific development process</p>
             </div>
+          </div>
+          
+          <div className="mt-10 p-6 rounded-xl border border-border bg-card/50">
+            <h4 className="font-semibold mb-3 text-center">When to Use Different Environments</h4>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <span className="font-medium mr-2">•</span>
+                <span><span className="font-medium">Development:</span> Build and test new features without affecting your production app.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="font-medium mr-2">•</span>
+                <span><span className="font-medium">Staging:</span> Replicate production conditions before launching to ensure everything works as expected.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="font-medium mr-2">•</span>
+                <span><span className="font-medium">Production:</span> Your live environment that users interact with - every new FlutterFlow project starts with this by default.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
